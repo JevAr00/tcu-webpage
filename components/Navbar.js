@@ -10,6 +10,12 @@ const Header = styled.header`
 	align-items: center;
 	justify-content: space-between;
 	background-color: ${colors.principal};
+
+	nav{
+		@media screen and (max-width: 727px){
+			visibility:hidden;	
+		}
+	}
 `;
 
 const A = styled.a`

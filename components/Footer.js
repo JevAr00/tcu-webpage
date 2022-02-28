@@ -112,7 +112,7 @@ const Location = styled(LocationOn)`
 
 // #endregion Grid
 
-const Mas = styled.div`
+const Dev = styled.div`
 	position: absolute;
 	bottom: 0;
 	left:0; 
@@ -153,10 +153,10 @@ const Footer = () => {
 					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><SWaze /></a>
 				</Icons>
 			</Section>
-			<Mas>
+			<Dev>
 				<p>Escuela Ramón Herrero Vitoria. Copyright © 2022. Todos los derechos reservados.</p>
 				<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>
-			</Mas>
+			</Dev>
 		</SFooter>
 	);
 };

@@ -54,7 +54,7 @@ const SFacebook = styled(Facebook)`
 
 	&:hover{
 		color: ${colors.facebook};
-		transition: 200ms;
+		transition: 0.5s;
 	}
 `;
 
@@ -65,7 +65,7 @@ const SWaze = styled(Waze)`
 
 	&:hover{
 		color: ${colors.waze};
-		transition: 200ms;
+		transition: 0.5s;
 	}
 `;
 // #endregion Iconos

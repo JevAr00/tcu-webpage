@@ -5,3 +5,9 @@ export const colors = {
 	waze: '#04cbfb',
 	facebook: '#0474f3',
 };
+
+export const breakpoints = {
+	small: '576px',
+	medium: '768px',
+	large: '992px',
+};

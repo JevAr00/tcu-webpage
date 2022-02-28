@@ -1,27 +1,52 @@
 import styled from 'styled-components';
 import Link from 'next/Link';
 import { colors } from '../public/theme';
+import { Menu } from '@styled-icons/evaicons-solid/Menu';
 
 const Header = styled.header`
 	display: flex;
-	width: 100%;
-	height: 64px;
-	padding: 0px 8%;
 	align-items: center;
 	justify-content: space-between;
 	background-color: ${colors.principal};
 
 	nav{
-		@media screen and (max-width: 727px){
-			visibility:hidden;	
+		ul{
+			margin: 0;
+			padding: 0;
+			display: flex;
+
+			li{
+				list-style: none;
+			}
+		}
+
+		@media (max-width: 576px) {
+			li{
+				display:none;
+			}
 		}
 	}
 `;
 
+const Logo = styled.div`
+	font-size: 1.5rem;
+	margin: .5rem;
+`;
+
+const SMenu = styled(Menu)`
+	width: 30px;
+	height: 21px;
+	display: none;
+
+	@media (max-width: 576px) {
+		display: flex;
+	}
+`;
+
 const A = styled.a`
-	size: 0rem;
-	margin-left: 30px;
 	letter-spacing: 1px;
+	padding: 1rem;
+	display: block;
 	color: ${colors.secundario};
 
 	&:hover{
@@ -32,14 +57,15 @@ const A = styled.a`
 const Navbar = () => {
 	return (
 		<Header>
-			<div>
-				<p>Logo</p>
-			</div>
+			<Logo>Logo</Logo>
 			<nav>
-				<Link href='/'><A>Inicio</A></Link>
-				<Link href='/nosotros'><A>Nosotros</A></Link>
-				<Link href='/docentes'><A>Docentes</A></Link>
-				<Link href='#footer'><A>Contacto</A></Link>
+				<SMenu />
+				<ul>
+					<li><Link href='/'><A>Inicio</A></Link></li>
+					<li><Link href='/nosotros'><A>Nosotros</A></Link></li>
+					<li><Link href='/docentes'><A>Docentes</A></Link></li>
+					<li><Link href='#footer'><A>Contacto</A></Link></li>
+				</ul>
 			</nav>
 		</Header>
 	);

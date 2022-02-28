@@ -50,12 +50,23 @@ const Icons = styled.div`
 const SFacebook = styled(Facebook)`
 	width: 120px;
 	height: 120px;
-	
+	color: white;
+
+	&:hover{
+		color: ${colors.facebook};
+		transition: 200ms;
+	}
 `;
 
 const SWaze = styled(Waze)`
 	width: 120px;
 	height: 120px;
+	color: white;
+
+	&:hover{
+		color: ${colors.waze};
+		transition: 200ms;
+	}
 `;
 // #endregion Iconos
 
@@ -79,8 +90,8 @@ const Footer = () => {
 				</Info>
 				<Divisor />
 				<Icons>
-					<div><SFacebook /></div>
-					<div><SWaze /></div>
+					<div><a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><SFacebook /></a></div>
+					<div><a href='https://www.waze.com/es/live-map/directions/escuela-ramon-herrero-vitoria-ruta-717-la-argentina-tacares-la-argentina,-puente-de-piedra,-grecia?utm_source=waze_website&utm_campaign=waze_website&utm_medium=website_menu&to=place.w.180617316.1806500843.680297' target='_blank' rel="noreferrer"><SWaze /></a></div>
 				</Icons>
 			</Section>
 		</SFooter>

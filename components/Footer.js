@@ -2,15 +2,20 @@ import styled from 'styled-components';
 import { colors } from '../public/theme';
 import { Facebook } from '@styled-icons/bootstrap/Facebook';
 import { Waze } from '@styled-icons/simple-icons/Waze';
+import { PhoneAlt } from '@styled-icons/fa-solid/PhoneAlt';
+import { Mail } from '@styled-icons/entypo/Mail';
+import { LocationOn } from '@styled-icons/material/LocationOn';
 
 const SFooter = styled.footer`
+	position: relative;
 	width: 100%;
-	height: 600px;
+	height: 550px;
 	border-radius: 30px 30px 0px 0px;
 	background-color: ${colors.footer};
 
 	h1{
 		padding: 30px;
+		color: white;
 	}
 `;
 
@@ -19,13 +24,24 @@ const Section = styled.section`
 	display: grid;
 	margin-left: 20px;
 	margin-right: 20px;
-	grid-template-columns: 1.7fr 0.03fr 1fr;
-	grid-column-gap: 0px;
+	grid-template-columns: 2.2fr 0.03fr 1fr;
 `;
 
 // Columna 1
 const Info = styled.div`
- padding-left: 40px;
+	align-self: center;
+	padding-left: 58px;
+	
+	div{
+		display: flexbox;
+		align-items: center;
+	}
+	
+	p{
+		margin-left: 18px;
+		font-size: 1.2rem;
+		color: white;
+	}
 `;
 
 // Columna 2
@@ -40,10 +56,16 @@ const Divisor = styled.div`
 // Columna 3
 const Icons = styled.div`
 	display: flex;
-	align-self: center;
-	padding-left: 60px;
-	padding-right: 60px;
 	justify-content: space-evenly;
+
+	a{
+		align-self: center;	
+		transition: all 0.4s ease-in-out;
+	}
+	
+	a:hover{
+		transform: scale(1.10);
+	}
 `;
 
 // #region Iconos
@@ -54,7 +76,6 @@ const SFacebook = styled(Facebook)`
 
 	&:hover{
 		color: ${colors.facebook};
-		transition: 0.5s;
 	}
 `;
 
@@ -65,12 +86,47 @@ const SWaze = styled(Waze)`
 
 	&:hover{
 		color: ${colors.waze};
-		transition: 0.5s;
 	}
+`;
+
+const size = 40;
+
+const Phone = styled(PhoneAlt)`
+	width: ${size}px;
+	height: ${size}px;
+	color: ${colors.secundario};
+`;
+
+const Email = styled(Mail)`
+	width: ${size}px;
+	height: ${size}px;
+	color: ${colors.secundario};
+`;
+
+const Location = styled(LocationOn)`
+	width: ${size}px;
+	height: ${size}px;
+	color: ${colors.secundario};
 `;
 // #endregion Iconos
 
 // #endregion Grid
+
+const Mas = styled.div`
+	position: absolute;
+	bottom: 0;
+	left:0; 
+	right:0;
+	text-align: center;
+
+	p{
+		color: #A6A6A6;
+	}
+
+	a{
+		color : ${colors.secundario};
+	}
+`;
 
 const Footer = () => {
 	return (
@@ -79,21 +135,28 @@ const Footer = () => {
 			<Section>
 				<Info>
 					<div>
+						<Phone />
 						<p>2494-4812</p>
 					</div>
 					<div>
+						<Email />
 						<p>esc.ramonherrerovitoria@mep.go.cr</p>
 					</div>
 					<div>
+						<Location />
 						<p>Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</p>
 					</div>
 				</Info>
 				<Divisor />
 				<Icons>
-					<div><a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><SFacebook /></a></div>
-					<div><a href='https://www.waze.com/es/live-map/directions/escuela-ramon-herrero-vitoria-ruta-717-la-argentina-tacares-la-argentina,-puente-de-piedra,-grecia?utm_source=waze_website&utm_campaign=waze_website&utm_medium=website_menu&to=place.w.180617316.1806500843.680297' target='_blank' rel="noreferrer"><SWaze /></a></div>
+					<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><SFacebook /></a>
+					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><SWaze /></a>
 				</Icons>
 			</Section>
+			<Mas>
+				<p>Escuela Ramón Herrero Vitoria. Copyright © 2022. Todos los derechos reservados.</p>
+				<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>
+			</Mas>
 		</SFooter>
 	);
 };

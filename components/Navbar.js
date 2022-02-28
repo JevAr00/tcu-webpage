@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/Link';
-import { colors } from '../public/theme';
+import { colors, breakpoints } from '../public/theme';
 import { Menu } from '@styled-icons/evaicons-solid/Menu';
 
 const Header = styled.header`
@@ -20,7 +20,7 @@ const Header = styled.header`
 			}
 		}
 
-		@media (max-width: 576px) {
+		@media (max-width: ${breakpoints.small}) {
 			li{
 				display:none;
 			}
@@ -38,7 +38,7 @@ const SMenu = styled(Menu)`
 	height: 21px;
 	display: none;
 
-	@media (max-width: 576px) {
+	@media (max-width: ${breakpoints.small}) {
 		display: flex;
 	}
 `;

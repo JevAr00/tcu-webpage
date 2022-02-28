@@ -24,7 +24,15 @@ const Section = styled.section`
 	display: grid;
 	margin-left: 20px;
 	margin-right: 20px;
-	grid-template-columns: 2.2fr 0.03fr 1fr;
+	grid-template-columns: 2.2fr 0.05fr 1fr;
+
+	@media screen and (max-width: 1024px){
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 0.06fr 1fr;
+		margin-left: 0px;
+		margin-right: 0px;
+		transform: scale(1);
+	}
 `;
 
 // Columna 1
@@ -51,6 +59,12 @@ const Divisor = styled.div`
   overflow: visible;
   border-radius: 11px;
 	background-color: #66738d;
+
+	@media screen and (max-width: 1024px) {
+		align-self: center;
+		width: 70%;
+		height: 11px;
+	}
 `;
 
 // Columna 3

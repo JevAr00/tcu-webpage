@@ -6,6 +6,8 @@ import { Menu } from '@styled-icons/evaicons-solid/Menu';
 const Header = styled.header`
 	display: flex;
 	align-items: center;
+	min-height: 5rem;
+	padding-inline: 4rem;
 	justify-content: space-between;
 	background-color: ${colors.principal};
 
@@ -19,23 +21,24 @@ const Header = styled.header`
 				list-style: none;
 			}
 		}
+	}
 
-		@media (max-width: ${breakpoints.small}) {
-			li{
+	@media (max-width: ${breakpoints.small}) {
+		padding-inline: 1.5rem;
+
+		li{
 				display:none;
-			}
 		}
 	}
 `;
 
 const Logo = styled.div`
 	font-size: 1.5rem;
-	margin: .5rem;
 `;
 
 const SMenu = styled(Menu)`
-	width: 30px;
-	height: 21px;
+	width: 2rem;
+	height: 2rem;
 	display: none;
 
 	@media (max-width: ${breakpoints.small}) {
@@ -44,10 +47,10 @@ const SMenu = styled(Menu)`
 `;
 
 const A = styled.a`
-	letter-spacing: 1px;
+	letter-spacing: 0.1rem;
 	padding: 1rem;
-	display: block;
 	color: ${colors.secundario};
+	cursor: pointer;
 
 	&:hover{
 		border-bottom: 2px solid ${colors.secundario};

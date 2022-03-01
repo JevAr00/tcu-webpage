@@ -1,15 +1,11 @@
 import styled from 'styled-components';
-import { colors } from '../public/theme';
-import { Facebook } from '@styled-icons/bootstrap/Facebook';
-import { Waze } from '@styled-icons/simple-icons/Waze';
-import { PhoneAlt } from '@styled-icons/fa-solid/PhoneAlt';
-import { Mail } from '@styled-icons/entypo/Mail';
-import { LocationOn } from '@styled-icons/material/LocationOn';
+import { colors, breakpoints } from '/public/theme';
+import { icons } from './icons';
 
 const SFooter = styled.footer`
 	position: relative;
 	width: 100%;
-	height: 550px;
+	min-height: 34rem;
 	border-radius: 30px 30px 0px 0px;
 	background-color: ${colors.footer};
 
@@ -20,24 +16,21 @@ const SFooter = styled.footer`
 `;
 
 // #region Grid
-const Section = styled.section`
-	display: grid;
-	margin-left: 20px;
-	margin-right: 20px;
-	grid-template-columns: 2.2fr 0.05fr 1fr;
+const Grid = styled.div`
+ 	display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
-	@media screen and (max-width: 1024px){
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 0.06fr 1fr;
-		margin-left: 0px;
-		margin-right: 0px;
-		transform: scale(1);
+	@media (max-width: ${breakpoints.x_large}) {
+		width: 100%;
+    flex-direction: column;
 	}
 `;
 
 // Columna 1
 const Info = styled.div`
-	align-self: center;
+	/*align-self: center;
 	padding-left: 58px;
 	
 	div{
@@ -49,7 +42,7 @@ const Info = styled.div`
 		margin-left: 18px;
 		font-size: 1.2rem;
 		color: white;
-	}
+	}*/
 `;
 
 // Columna 2
@@ -60,7 +53,7 @@ const Divisor = styled.div`
   border-radius: 11px;
 	background-color: #66738d;
 
-	@media screen and (max-width: 1024px) {
+	@media (max-width: ${breakpoints.x_large}) {
 		align-self: center;
 		width: 70%;
 		height: 11px;
@@ -81,49 +74,6 @@ const Icons = styled.div`
 		transform: scale(1.10);
 	}
 `;
-
-// #region Iconos
-const SFacebook = styled(Facebook)`
-	width: 120px;
-	height: 120px;
-	color: white;
-
-	&:hover{
-		color: ${colors.facebook};
-	}
-`;
-
-const SWaze = styled(Waze)`
-	width: 120px;
-	height: 120px;
-	color: white;
-
-	&:hover{
-		color: ${colors.waze};
-	}
-`;
-
-const size = 40;
-
-const Phone = styled(PhoneAlt)`
-	width: ${size}px;
-	height: ${size}px;
-	color: ${colors.secundario};
-`;
-
-const Email = styled(Mail)`
-	width: ${size}px;
-	height: ${size}px;
-	color: ${colors.secundario};
-`;
-
-const Location = styled(LocationOn)`
-	width: ${size}px;
-	height: ${size}px;
-	color: ${colors.secundario};
-`;
-// #endregion Iconos
-
 // #endregion Grid
 
 const Dev = styled.div`
@@ -142,31 +92,31 @@ const Dev = styled.div`
 	}
 `;
 
-const Footer = () => {
+export const Footer = () => {
 	return (
 		<SFooter id='footer'>
 			<h1>Contactenos</h1>
-			<Section>
+			<Grid>
 				<Info>
 					<div>
-						<Phone />
+						<icons.Phone />
 						<p>2494-4812</p>
 					</div>
 					<div>
-						<Email />
+						<icons.Email />
 						<p>esc.ramonherrerovitoria@mep.go.cr</p>
 					</div>
 					<div>
-						<Location />
+						<icons.Location />
 						<p>Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</p>
 					</div>
 				</Info>
 				<Divisor />
 				<Icons>
-					<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><SFacebook /></a>
-					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><SWaze /></a>
+					<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><icons.SFacebook /></a>
+					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><icons.SWaze /></a>
 				</Icons>
-			</Section>
+			</Grid>
 			<Dev>
 				<p>Escuela Ramón Herrero Vitoria. Copyright © 2022. Todos los derechos reservados.</p>
 				<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>

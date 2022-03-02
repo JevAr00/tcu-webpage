@@ -44,6 +44,9 @@ const Info = styled.div`
 			margin-inline: 1rem;
 			font-size: 1.07rem;
 		}
+		a{
+			color: white;
+		}
 	}
 `;
 
@@ -109,7 +112,7 @@ export const Footer = () => {
 					</div>
 					<div>
 						<icons.Email {...size}/>
-						<p>esc.ramonherrerovitoria@mep.go.cr</p>
+						<p><a href="mailto:esc.ramonherrerovitoria@mep.go.cr?">esc.ramonherrerovitoria@mep.go.cr</a></p>
 					</div>
 					<div>
 						<icons.Location {...size}/>

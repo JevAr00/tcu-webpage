@@ -53,7 +53,10 @@ const A = styled.a`
 	cursor: pointer;
 
 	&:hover{
-		border-bottom: 2px solid ${colors.secundario};
+		border-bottom: 1px solid ${colors.secundario};
+		background-color: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+		border-radius: 0.2rem;
 	}
 `;
 

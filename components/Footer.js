@@ -92,6 +92,11 @@ const Dev = styled.div`
 	}
 `;
 
+const size = {
+	width: '2.5rem',
+	height: '2.5rem',
+};
+
 export const Footer = () => {
 	return (
 		<SFooter id='footer'>
@@ -99,15 +104,15 @@ export const Footer = () => {
 			<Grid>
 				<Info>
 					<div>
-						<icons.Phone />
+						<icons.Phone {...size}/>
 						<p>2494-4812</p>
 					</div>
 					<div>
-						<icons.Email />
+						<icons.Email {...size}/>
 						<p>esc.ramonherrerovitoria@mep.go.cr</p>
 					</div>
 					<div>
-						<icons.Location />
+						<icons.Location {...size}/>
 						<p>Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</p>
 					</div>
 				</Info>

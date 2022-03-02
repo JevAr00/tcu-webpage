@@ -22,12 +22,12 @@ const SFooter = styled.footer`
 // #region Grid
 const Grid = styled.div`
 	display: flex;
-  justify-content: center;
+	justify-content: center;
 	padding: 1rem 1.5rem;
 
 	@media (max-width: ${breakpoints.x_large}) {
 		width: 100%;
-    flex-direction: column;
+		flex-direction: column;
 	}
 `;
 
@@ -52,8 +52,8 @@ const Divisor = styled.div`
 	width: 11px;
 	height: 270px;
 	margin-right: 4rem;
-  overflow: visible;
-  border-radius: 11px;
+	overflow: visible;
+	border-radius: 11px;
 	background-color: #66738d;
 
 	@media (max-width: ${breakpoints.x_large}) {

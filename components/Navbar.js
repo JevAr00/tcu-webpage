@@ -27,7 +27,7 @@ const Header = styled.header`
 		padding-inline: 1.5rem;
 
 		li{
-				display:none;
+			display:none;
 		}
 	}
 `;

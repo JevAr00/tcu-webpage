@@ -3,24 +3,27 @@ import { colors, breakpoints } from '/public/theme';
 import { icons } from './icons';
 
 const SFooter = styled.footer`
-	position: relative;
-	width: 100%;
+	display: flex;
 	min-height: 34rem;
+	flex-direction: column;
 	border-radius: 30px 30px 0px 0px;
 	background-color: ${colors.footer};
 
 	h1{
-		padding: 30px;
+		margin: 2rem;
+		color: white;
+	}
+
+	p{
 		color: white;
 	}
 `;
 
 // #region Grid
 const Grid = styled.div`
- 	display: flex;
-  align-items: center;
+	display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+	padding: 1rem 1.5rem;
 
 	@media (max-width: ${breakpoints.x_large}) {
 		width: 100%;
@@ -28,41 +31,41 @@ const Grid = styled.div`
 	}
 `;
 
-// Columna 1
 const Info = styled.div`
-	/*align-self: center;
-	padding-left: 58px;
-	
+	width: 65%;
+	align-self: center;
+
 	div{
-		display: flexbox;
+		display: flex;
+		margin: 1rem;
 		align-items: center;
+
+		p{
+			margin-inline: 1rem;
+			font-size: 1.07rem;
+		}
 	}
-	
-	p{
-		margin-left: 18px;
-		font-size: 1.2rem;
-		color: white;
-	}*/
 `;
 
-// Columna 2
+// Line
 const Divisor = styled.div`
 	width: 11px;
 	height: 270px;
+	margin-right: 4rem;
   overflow: visible;
   border-radius: 11px;
 	background-color: #66738d;
 
 	@media (max-width: ${breakpoints.x_large}) {
 		align-self: center;
-		width: 70%;
+		width: 60%;
 		height: 11px;
 	}
 `;
 
-// Columna 3
 const Icons = styled.div`
 	display: flex;
+	width: 25%;
 	justify-content: space-evenly;
 
 	a{
@@ -77,10 +80,7 @@ const Icons = styled.div`
 // #endregion Grid
 
 const Dev = styled.div`
-	position: absolute;
-	bottom: 0;
-	left:0; 
-	right:0;
+	margin: auto 0 0 0;
 	text-align: center;
 
 	p{
@@ -95,7 +95,7 @@ const Dev = styled.div`
 export const Footer = () => {
 	return (
 		<SFooter id='footer'>
-			<h1>Contactenos</h1>
+			<h1>Contáctenos</h1>
 			<Grid>
 				<Info>
 					<div>

@@ -2,11 +2,9 @@ import styled from 'styled-components';
 import { colors } from '/public/theme';
 import { Mail } from '@styled-icons/entypo/Mail';
 
-const size = 40;
-
 const Email = styled(Mail)`
-	width: ${size}px;
-	height: ${size}px;
+	width: ${props => props.width || '1rem'};
+	height: ${props => props.height || '1rem'};
 	color: ${colors.secundario};
 `;
 

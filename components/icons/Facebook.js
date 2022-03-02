@@ -3,8 +3,8 @@ import { colors } from '/public/theme';
 import { Facebook } from '@styled-icons/bootstrap/Facebook';
 
 const SFacebook = styled(Facebook)`
-	width: 120px;
-	height: 120px;
+	width: 7.5rem;
+	height: 7.5rem;
 	color: white;
 
 	&:hover{

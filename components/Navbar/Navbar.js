@@ -9,12 +9,12 @@ const Header = styled.header`
 	width: 100%;
 	display: flex;
 	position: fixed;
-	transition: all 0.5s ease-in-out;
 	align-items: center;
-	padding: 1.125rem 3rem;
-	justify-content: space-between;
-	background-color: hsl(0 0% 100% / 0.1);
+	padding: 1.125rem 4rem;
 	backdrop-filter: blur(1rem);
+	justify-content: space-between;
+	transition: all 0.5s ease-in-out;
+	background-color: hsl(0 0% 100% / 0.1);
 
 	nav{
 		ul{
@@ -62,18 +62,18 @@ const SMenu = styled(Menu)`
 const A = styled.a`
 	padding: 1rem;
 	cursor: pointer;
-	margin: 0 0.938rem;
 	position: relative;
+	margin: 0 0.938rem;
 	text-decoration: none;
 	letter-spacing: 0.125rem;
 	color: ${colors.secundario};
 	
 
 	&:hover{
-		border-bottom: 1px solid ${colors.secundario};
-		background-color: hsl(0 0% 100% / 0.1);
-    backdrop-filter: blur(1rem);
 		border-radius: 0.2rem;
+		backdrop-filter: blur(1rem);
+		background-color: hsl(0 0% 100% / 0.1);
+		border-bottom: 1px solid ${colors.secundario};
 	}
 `;
 

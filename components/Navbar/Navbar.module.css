@@ -1,7 +1,7 @@
-#navbar{
-  background-color: green;
-}
 
 #stickyNav{
+  transition: all 0.5s ease-in-out;
   background-color: black;
+  backdrop-filter: blur(1rem);
+  padding: 1.125rem 4rem;
 }

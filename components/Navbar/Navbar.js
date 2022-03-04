@@ -9,10 +9,12 @@ const Header = styled.header`
 	width: 100%;
 	display: flex;
 	position: fixed;
-	transition: 0.6s;
+	transition: all 0.5s ease-in-out;
 	align-items: center;
-	padding: 1.125rem 4.4rem;
+	padding: 1.125rem 3rem;
 	justify-content: space-between;
+	background-color: hsl(0 0% 100% / 0.1);
+	backdrop-filter: blur(1rem);
 
 	nav{
 		ul{
@@ -37,7 +39,6 @@ const Header = styled.header`
 		}
 	}
 `;
-
 
 const Logo = styled.div`
 	color: white;
@@ -77,7 +78,8 @@ const A = styled.a`
 `;
 
 const Navbar = () => {
-	const [colorChange, setColor] = useState(false);
+
+	const [Color, setColor] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
@@ -88,9 +90,10 @@ const Navbar = () => {
 				setColor(false);
 			}
 		});
-	});
+	}, []);
+
 	return (
-		<Header id={colorChange ? styles.stickyNav : styles.navbar}>
+		<Header id={Color ? styles.stickyNav : ''}>
 			<Logo>Logo</Logo>
 			<nav>
 				<SMenu/>

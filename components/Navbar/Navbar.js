@@ -89,7 +89,6 @@ const Navbar = () => {
 			}
 		});
 	});
-
 	return (
 		<Header id={colorChange ? styles.stickyNav : styles.navbar}>
 			<Logo>Logo</Logo>

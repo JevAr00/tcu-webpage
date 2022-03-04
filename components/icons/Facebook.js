@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '/public/theme';
+import { colors, breakpoints } from '/public/theme';
 import { Facebook } from '@styled-icons/bootstrap/Facebook';
 
 const SFacebook = styled(Facebook)`
@@ -9,6 +9,11 @@ const SFacebook = styled(Facebook)`
 
 	&:hover{
 		color: ${colors.facebook};
+	}
+
+	@media (max-width: ${breakpoints.small}) {
+		width: 4.7rem;
+		height: 4.7rem;
 	}
 `;
 

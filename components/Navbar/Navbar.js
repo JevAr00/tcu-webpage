@@ -1,7 +1,9 @@
-import styled, { css } from 'styled-components';
 import Link from 'next/Link';
-import { colors, breakpoints } from '../public/theme';
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import { Menu } from '@styled-icons/evaicons-solid/Menu';
+import { colors, breakpoints } from '../../public/theme';
+import styles from './Navbar.module.css';
 
 const Header = styled.header`
 	width: 100%;
@@ -11,11 +13,7 @@ const Header = styled.header`
 	align-items: center;
 	padding: 1.125rem 4.4rem;
 	justify-content: space-between;
-	background-color: transparent;
 
-	.sticky{
-		background-color:white ;
-	}
 	nav{
 		ul{
 			margin: 0;
@@ -79,8 +77,21 @@ const A = styled.a`
 `;
 
 const Navbar = () => {
+	const [colorChange, setColor] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 0) {
+				setColor(true);
+			}
+			else {
+				setColor(false);
+			}
+		});
+	});
+
 	return (
-		<Header>
+		<Header id={colorChange ? styles.stickyNav : styles.navbar}>
 			<Logo>Logo</Logo>
 			<nav>
 				<SMenu/>

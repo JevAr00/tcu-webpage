@@ -10,7 +10,7 @@ const Header = styled.header`
 	display: flex;
 	position: fixed;
 	align-items: center;
-	padding: 1.125rem 4rem;
+	padding: 1.7rem 4rem;
 	backdrop-filter: blur(1rem);
 	justify-content: space-between;
 	transition: all 0.5s ease-in-out;
@@ -23,6 +23,7 @@ const Header = styled.header`
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
 			li{
 				margin: 0;
 				list-style: none;
@@ -31,13 +32,24 @@ const Header = styled.header`
 		}
 	}
 
-	@media (max-width: ${breakpoints.medium}) {
-		padding-inline: 1.5rem;
-
+	@media (max-width: ${breakpoints.large}) {
+		padding: 1rem 4rem;
+		padding-inline: 3rem;
 		li{
 			display:none;
 		}
 	}
+
+	@media (max-width: ${breakpoints.small}) {
+		padding: 1rem 4rem;
+		padding-inline: 2rem;
+		border-radius: 0.5rem;
+		background-color: ${colors.principal};
+		li{
+			display:none;
+		}
+	}
+	
 `;
 
 const Logo = styled.div`
@@ -47,6 +59,7 @@ const Logo = styled.div`
 	position: relative;
 	text-decoration: none;
 	letter-spacing: 0.125rem;
+	color: ${colors.secundario};
 `;
 
 const SMenu = styled(Menu)`
@@ -54,13 +67,13 @@ const SMenu = styled(Menu)`
 	height: 2rem;
 	display: none;
 
-	@media (max-width: ${breakpoints.medium}) {
+	@media (max-width: ${breakpoints.large}) {
 		display: flex;
 	}
 `;
 
 const A = styled.a`
-	padding: 1rem;
+	padding: 0.5rem;
 	cursor: pointer;
 	position: relative;
 	margin: 0 0.938rem;
@@ -82,14 +95,18 @@ const Navbar = () => {
 	const [Color, setColor] = useState(false);
 
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			if (window.scrollY > 0) {
-				setColor(true);
-			}
-			else {
-				setColor(false);
-			}
-		});
+		if (window.screen.width > 576) {
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 0) {
+					setColor(true);
+					console.log(window.screen.width);
+				}
+				else {
+					setColor(false);
+					console.log(window.screen.width);
+				}
+			});
+		}
 	}, []);
 
 	return (

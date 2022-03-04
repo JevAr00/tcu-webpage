@@ -1,10 +1,12 @@
 
 #stickyNav{
-  padding-inline: 2rem;
+  margin: 0;
+  padding: 10pt 0;
+  width: 90%;
+  margin-inline: 5%;
+  padding-inline: 3rem;
   border-radius: 2rem;
   margin-top: 0.75rem;
-  padding: 1.125rem 7rem;
   background-color: #E1E5F2;
-  backdrop-filter: blur(0.5rem);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }

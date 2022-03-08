@@ -3,4 +3,13 @@ module.exports = {
 	compiler: {
 		styledComponents: true,
 	},
+	async redirects() {
+		return [
+			{
+				source: '/login',
+				destination: '/api/auth/login',
+				permanent: true,
+			},
+		];
+	},
 };

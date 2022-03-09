@@ -11,4 +11,9 @@ export default function Dashboard() {
 	);
 }
 
-export const getServerSideProps = withPageAuthRequired();
+export async function getServerSideProps() {
+	withPageAuthRequired();
+	return {
+		props:{},
+	};
+}

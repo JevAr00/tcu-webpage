@@ -1,5 +1,5 @@
 import styles from 'styles/Dashboard.module.css';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { withPageAuthRequired, getSession } from '@auth0/nextjs-auth0';
 
 export default function Dashboard() {
 
@@ -11,9 +11,4 @@ export default function Dashboard() {
 	);
 }
 
-export async function getServerSideProps() {
-	withPageAuthRequired();
-	return {
-		props:{},
-	};
-}
+export const getServerSideProps = withPageAuthRequired();

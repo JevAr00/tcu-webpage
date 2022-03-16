@@ -92,7 +92,7 @@ const A = styled.a`
 
 const Navbar = () => {
 
-	const [Color, setColor] = useState(false);
+	const [color, setColor] = useState(false);
 
 	useEffect(() => {
 		if (window.screen.width > 576) {
@@ -110,7 +110,7 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<Header id={Color ? styles.stickyNav : ''}>
+		<Header id={color ? styles.stickyNav : ''}>
 			<Logo>Logo</Logo>
 			<nav>
 				<SMenu/>

@@ -1,17 +1,24 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Layout = ({ children }) => {
+	const Router = useRouter();
+
 	return (
 		<div>
 			<Head>
 				<title>Inicio</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Navbar />
+			{
+				Router.pathname === '/dashboard' ? null : <Navbar />
+			}
 			{ children }
-			<Footer />
+			{
+				Router.pathname === '/dashboard' ? null : <Footer />
+			}
 		</div>
 	);
 };

@@ -10,6 +10,11 @@ module.exports = {
 				destination: '/api/auth/login',
 				permanent: true,
 			},
+			{
+				source: '/logout',
+				destination: '/api/auth/logout',
+				permanent: true,
+			},
 		];
 	},
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors, breakpoints } from '../public/theme';
-import { icons } from './icons';
+import { colors, breakpoints } from 'public/theme';
+import { icons } from '../icons';
 
 const SFooter = styled.footer`
 	display: flex;

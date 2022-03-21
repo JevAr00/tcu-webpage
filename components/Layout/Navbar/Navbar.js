@@ -2,7 +2,7 @@ import Link from 'next/Link';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Menu } from '@styled-icons/evaicons-solid/Menu';
-import { colors, breakpoints } from '../../public/theme';
+import { colors, breakpoints } from 'public/theme';
 import styles from './Navbar.module.css';
 
 const Header = styled.header`

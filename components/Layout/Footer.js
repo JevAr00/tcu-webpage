@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors, breakpoints } from 'public/theme';
-import { icons } from '../icons';
+import { Email, Facebook, Location, Phone, Waze } from '../Icons';
 
 const SFooter = styled.footer`
 	display: flex;
@@ -150,22 +150,22 @@ export const Footer = () => {
 			<Grid>
 				<Info>
 					<div>
-						<icons.Phone {...size}/>
+						<Phone {...size}/>
 						<p>2494-4812</p>
 					</div>
 					<div>
-						<icons.Email {...size}/>
+						<Email {...size}/>
 						<p><a href="mailto:esc.ramonherrerovitoria@mep.go.cr?">esc.ramonherrerovitoria@mep.go.cr</a></p>
 					</div>
 					<div>
-						<icons.Location {...size}/>
+						<Location {...size}/>
 						<p>Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</p>
 					</div>
 				</Info>
 				<Divisor />
 				<Icons>
-					<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><icons.SFacebook /></a>
-					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><icons.SWaze /></a>
+					<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><Facebook /></a>
+					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><Waze /></a>
 				</Icons>
 			</Grid>
 			<Dev>

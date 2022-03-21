@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, breakpoints } from '/public/theme';
+import { colors, breakpoints } from 'public/theme';
 import { Waze } from '@styled-icons/simple-icons/Waze';
 
 const SWaze = styled(Waze)`

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '/public/theme';
+import { colors } from 'public/theme';
 import { PhoneAlt } from '@styled-icons/fa-solid/PhoneAlt';
 
 const Phone = styled(PhoneAlt)`

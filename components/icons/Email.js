@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '/public/theme';
+import { colors } from 'public/theme';
 import { Mail } from '@styled-icons/entypo/Mail';
 
 const Email = styled(Mail)`

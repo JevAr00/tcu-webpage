@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, breakpoints } from '/public/theme';
+import { colors, breakpoints } from 'public/theme';
 import { Facebook } from '@styled-icons/bootstrap/Facebook';
 
 const SFacebook = styled(Facebook)`

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '/public/theme';
+import { colors } from 'public/theme';
 import { LocationOn } from '@styled-icons/material/LocationOn';
 
 const Location = styled(LocationOn)`

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 import { colors } from 'public/theme';
-import { Exit } from '../../Icons';
+import { Exit } from '../Icons';
 
 const Header = styled.header`
 	width: 100%;

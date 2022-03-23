@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Menu } from '@styled-icons/evaicons-solid/Menu';

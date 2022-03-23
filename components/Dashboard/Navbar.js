@@ -24,6 +24,7 @@ const OptionContainer = styled.div`
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
+	justify-content: center;
 	width: 100%;
 	height: 80%;
 `;
@@ -42,15 +43,18 @@ const Option = styled.div`
 	width: 94%;
 	height: 3.3rem;
 	text-align: center;
+	line-height: 3.3rem;
 	justify-content: center;
 	border-radius: 2rem 0 0 2rem;
 	background-color: white;
 `;
 
 const A = styled.a`
+	font-size: 1.5rem;
 	width: 100%;
 	height: 100%;
-	
+	color: ${colors.footer};
+	font-weight: 500;
 `;
 
 const Navbar = () => {

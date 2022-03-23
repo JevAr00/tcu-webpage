@@ -27,7 +27,6 @@ const Header = styled.header`
 			li{
 				margin: 0;
 				list-style: none;
-				position: relative;
 			}
 		}
 	}
@@ -115,10 +114,10 @@ const Navbar = () => {
 			<nav>
 				<SMenu/>
 				<ul>
-					<li><Link href='/'><A>Inicio</A></Link></li>
-					<li><Link href='/nosotros'><A>Nosotros</A></Link></li>
-					<li><Link href='/docentes'><A>Docentes</A></Link></li>
-					<li><Link href='#footer'><A>Contacto</A></Link></li>
+					<li><Link href='/' passHref><A>Inicio</A></Link></li>
+					<li><Link href='/nosotros' passHref><A>Nosotros</A></Link></li>
+					<li><Link href='/docentes' passHref><A>Docentes</A></Link></li>
+					<li><Link href='#footer' passHref><A>Contacto</A></Link></li>
 				</ul>
 			</nav>
 		</Header>

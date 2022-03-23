@@ -8,7 +8,7 @@ export default function Dashboard() {
 		<>
 			<Navbar />
 			<div className={styles.container}>
-				<h1>Hola</h1>
+				<div></div>
 			</div>
 		</>
 	);

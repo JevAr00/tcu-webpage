@@ -6,7 +6,6 @@ import { Exit } from '../Icons';
 
 const Header = styled.header`
 	display: flex;
-	position: fixed;
 	flex-direction: column;
 	width: 14rem;
 	height: 100%;
@@ -24,37 +23,24 @@ const OptionContainer = styled.div`
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
-	justify-content: center;
 	width: 100%;
 	height: 80%;
 `;
-/* const Option = styled.div`
-	margin: .5rem 0;
-	width: 90%;
-	height: 3rem;
-	text-align: center;
-	border-radius: 0.2rem;
-	backdrop-filter: blur(1rem);
-	background-color: hsl(0 0% 100% / 0.1);
-	border-bottom: 1px solid ${colors.secundario};
-`;*/
 
 const Option = styled.div`
 	width: 94%;
 	height: 3.3rem;
 	text-align: center;
-	line-height: 3.3rem;
-	justify-content: center;
+	line-height: 3.2rem;
 	border-radius: 2rem 0 0 2rem;
 	background-color: white;
 `;
 
 const A = styled.a`
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	width: 100%;
 	height: 100%;
 	color: ${colors.footer};
-	font-weight: 500;
 `;
 
 const Navbar = () => {
@@ -63,7 +49,7 @@ const Navbar = () => {
 			<h1>Dashboard</h1>
 			<OptionContainer>
 				<Option>
-					<A>Docentes</A>
+					<Link href='' passHref><A>Docentes</A></Link>
 				</Option>
 			</OptionContainer>
 			<Exit href='/logout'/>

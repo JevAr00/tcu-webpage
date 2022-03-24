@@ -5,12 +5,12 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 export default function Dashboard() {
 
 	return (
-		<>
+		<div className={styles.container}>
 			<Navbar />
-			<div className={styles.container}>
-				<div></div>
+			<div className={styles.tableContainer}>
+				a
 			</div>
-		</>
+		</div>
 	);
 }
 

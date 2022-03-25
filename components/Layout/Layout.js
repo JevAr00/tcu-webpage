@@ -13,11 +13,11 @@ const Layout = ({ children }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			{
-				Router.pathname === '/dashboard' ? null : <Navbar />
+				Router.pathname.includes('/dashboard') ? null : <Navbar />
 			}
 			{ children }
 			{
-				Router.pathname === '/dashboard' ? null : <Footer />
+				Router.pathname.includes('/dashboard') ? null : <Footer />
 			}
 		</div>
 	);

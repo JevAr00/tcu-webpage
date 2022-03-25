@@ -1,3 +1,3 @@
-import _Navbar from './Navbar';
+import _Panels from './Panels';
 
-export const Navbar = _Navbar;
+export const Panel = _Panels;

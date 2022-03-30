@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-
+import { useRouter } from 'next/router';
 import usePanel from 'hooks/usePanel';
 import { colors } from 'public/theme';
 import { Exit } from 'components/Icons';
@@ -56,6 +56,11 @@ const Button = styled.button`
 export default function Dashboard() {
 	const { panel, selectPanel } = usePanel();
 
+	const router = useRouter();
+	const logout = () => {
+		router.push('/logout');
+	};
+
 	return (
 		<div className={styles.container}>
 			<Header>
@@ -65,7 +70,7 @@ export default function Dashboard() {
 						<Button onClick={() => selectPanel('docente')}>Docentes</Button>
 					</Option>
 				</OptionContainer>
-				<Exit href='/logout'/>
+				<Exit onClick={() => logout()}/>
 			</Header>
 			<div className={styles.panel}><Panel selectedPanel={panel}/></div>
 		</div>

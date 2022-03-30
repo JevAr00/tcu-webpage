@@ -1,8 +1,19 @@
+import styled from 'styled-components';
+import Table from '../Table';
+
+const headers = ['Nombre', 'Apellidos', 'Grado'];
+const Area = styled.div`
+	width: 100%;
+	border: 2px solid red;
+`;
+
 const PDocentes = () => {
 	return (
-		<div>
-			<h1>Usted esta en docentes</h1>
-		</div>
+		<Area>
+			<div>
+				<Table columns={headers}/>
+			</div>
+		</Area>
 	);
 };
 

@@ -11,7 +11,6 @@ const Header = styled.header`
 	display: flex;
 	flex-direction: column;
 	width: 14rem;
-	height: 100%;
 	align-items: center;
 	justify-content: space-around;
 	background-color: ${colors.principal};
@@ -54,7 +53,6 @@ const Button = styled.button`
 	}
 `;
 
-
 export default function Dashboard() {
 	const { panel, selectPanel } = usePanel();
 
@@ -69,7 +67,7 @@ export default function Dashboard() {
 				</OptionContainer>
 				<Exit href='/logout'/>
 			</Header>
-			<Panel selectedPanel={panel}/>
+			<div className={styles.panel}><Panel selectedPanel={panel}/></div>
 		</div>
 	);
 }

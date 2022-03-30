@@ -2,17 +2,17 @@ import styled from 'styled-components';
 import Table from '../Table';
 
 const headers = ['Nombre', 'Apellidos', 'Grado'];
+
 const Area = styled.div`
+	height: 100%;
 	width: 100%;
-	border: 2px solid red;
+	/* background-color: blue; */
 `;
 
 const PDocentes = () => {
 	return (
 		<Area>
-			<div>
-				<Table columns={headers}/>
-			</div>
+			<Table columns={headers}/>
 		</Area>
 	);
 };

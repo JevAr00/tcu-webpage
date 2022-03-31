@@ -8,8 +8,6 @@ const Table = styled.table`
 `;
 
 const THead = styled.thead`
-	background-color: ${colors.secundario};
-
 	th{
 			padding: 20px 15px;
   		text-align: center;
@@ -17,12 +15,15 @@ const THead = styled.thead`
   		font-size: 12px;
   		color: #fff;
   		text-transform: uppercase;
+			background-color: ${colors.secundario};
 		}
 `;
 
 const TBody = styled.tbody`
-	height: 100px;
-  overflow-x: auto;
+	height: 100%;
+	/* position: fixed; */
+	overflow-y: scroll;
+	tab-size: 100%;
 	background-color: ${colors.principal};
 
 	td {
@@ -35,7 +36,7 @@ const TBody = styled.tbody`
 
 const dataTable = ({ data, columns }) => {
 	return (
-		<Table>
+		<Table cellPadding={0} cellSpacing={0} border={0}>
 			<THead>
 				<tr>
 					{
@@ -45,7 +46,7 @@ const dataTable = ({ data, columns }) => {
 					}
 				</tr>
 			</THead>
-			<tbody>
+			<TBody>
 				{
 					data.map((datos) => (
 						<tr key={datos}>
@@ -56,7 +57,7 @@ const dataTable = ({ data, columns }) => {
 						</tr>
 					))
 				}
-			</tbody>
+			</TBody>
 		</Table>
 	);
 };

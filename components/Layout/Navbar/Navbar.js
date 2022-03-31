@@ -48,7 +48,6 @@ const Header = styled.header`
 			display:none;
 		}
 	}
-	
 `;
 
 const Logo = styled.div`

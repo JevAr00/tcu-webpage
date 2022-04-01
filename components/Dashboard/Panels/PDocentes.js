@@ -54,10 +54,14 @@ const dbData = [
 ];
 
 const Area = styled.div`
+	padding: 0;
+	margin: 0;
+	display: flex;
 	height: 100%;
 	width: 100%;
-	/* background-color: blue; */
+	justify-content: center;
 `;
+
 
 const PDocentes = () => {
 	return (

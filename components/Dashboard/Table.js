@@ -1,65 +1,78 @@
 import styled from 'styled-components';
 import { colors } from 'public/theme';
 
+
+const TableContainer = styled.div`
+	width: 85rem;
+	height: 40rem; 
+	margin-top:3rem;
+`;
+
 const Table = styled.table`
-	width: 100%;
-	padding: 4rem 2rem;
-	table-layout: fixed;
+	display: flex;
+  flex-direction: column;
+	width:100%;
+  
+  tr {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const THead = styled.thead`
+	background-color: ${colors.secundario};
+
 	th{
-			padding: 20px 15px;
-  		text-align: center;
-  		font-weight: 500;
-  		font-size: 12px;
-  		color: #fff;
-  		text-transform: uppercase;
-			background-color: ${colors.secundario};
-		}
+		padding: 20px 0;
+  	text-align: center;
+  	font-weight: 500;
+  	font-size: 12px;
+  	color: #fff;
+  	text-transform: uppercase;
+	}
 `;
 
 const TBody = styled.tbody`
-	height: 100%;
-	/* position: fixed; */
-	overflow-y: scroll;
-	tab-size: 100%;
+  overflow-y: scroll;
+  height: 36rem;
 	background-color: ${colors.principal};
 
 	td {
-  		padding: 15px;
-  		text-align: left;
-  		vertical-align: middle;
-  		font-weight: 300;
-		}
+  	padding: 1rem .8rem;
+  	text-align: left;
+  	vertical-align: middle;
+  	font-weight: 300;
+	}
 `;
 
-const dataTable = ({ data, columns }) => {
+const DataTable = ({ data, columns }) => {
 	return (
-		<Table cellPadding={0} cellSpacing={0} border={0}>
-			<THead>
-				<tr>
+		<TableContainer>
+			<Table>
+				<THead>
+					<tr>
+						{
+							columns.map((columna) => (
+								<th key={columna}>{columna}</th>
+							))
+						}
+					</tr>
+				</THead>
+				<TBody>
 					{
-						columns.map((columna) => (
-							<th key={columna}>{columna}</th>
+						data.map((datos) => (
+							<tr key={datos}>
+								<td>{datos.nombre}</td>
+								<td>{datos.apellido}</td>
+								<td>{datos.materias}</td>
+								<td>{datos.grado}</td>
+							</tr>
 						))
 					}
-				</tr>
-			</THead>
-			<TBody>
-				{
-					data.map((datos) => (
-						<tr key={datos}>
-							<td>{datos.nombre}</td>
-							<td>{datos.apellido}</td>
-							<td>{datos.materias}</td>
-							<td>{datos.grado}</td>
-						</tr>
-					))
-				}
-			</TBody>
-		</Table>
+				</TBody>
+			</Table>
+		</TableContainer>
 	);
 };
 
-module.exports = dataTable;
+module.exports = DataTable;

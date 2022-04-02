@@ -4,44 +4,61 @@ import { colors } from 'public/theme';
 
 const TableContainer = styled.div`
 	width: 85rem;
-	height: 40rem; 
+	height: 40rem;
 	margin-top:3rem;
 `;
 
 const Table = styled.table`
 	display: flex;
   flex-direction: column;
-	width:100%;
-  
+
   tr {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-  }
+	}
 `;
 
 const THead = styled.thead`
+	border-radius: 1rem 1rem 0 0;
 	background-color: ${colors.secundario};
 
 	th{
+  	color:  white;
 		padding: 20px 0;
-  	text-align: center;
+		font-size: 12px;
   	font-weight: 500;
-  	font-size: 12px;
-  	color: #fff;
+		text-align: center;
+		align-self: center;
   	text-transform: uppercase;
 	}
 `;
 
 const TBody = styled.tbody`
+	height: 36rem;
   overflow-y: scroll;
-  height: 36rem;
+	border-radius: 0 0 1rem 1rem;
 	background-color: ${colors.principal};
 
+	::-webkit-scrollbar{
+  	width: 5px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+  	border-radius: 5px;
+  	background-color: hsla(204, 44%, 55%, 0.932);
+	}
+
+	::-webkit-scrollbar-thumb {
+  	border-radius: 5px;
+  	background-color: hsla(204, 44%, 55%, 0.726);
+	}
+
 	td {
-  	padding: 1rem .8rem;
-  	text-align: left;
-  	vertical-align: middle;
-  	font-weight: 300;
+		height: 4rem;
+  	font-weight: 400;
+  	text-align: center;
+		align-self: center;
+		padding: 1rem .8rem;
 	}
 `;
 

@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
 	return (
 		<div>
 			<Head>
-				<title>Inicio</title>
+				<title>Escuela Ramon Herrero Vitoria</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			{

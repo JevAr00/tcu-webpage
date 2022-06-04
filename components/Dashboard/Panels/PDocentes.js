@@ -54,20 +54,21 @@ const dbData = [
 ];
 
 const Area = styled.div`
-	padding: 0;
 	margin: 0;
-	display: flex;
-	height: 100%;
+	padding: 0;
 	width: 100%;
+	height: 100%;
+	display: flex;
 	justify-content: center;
-`;
 
+`;
 
 const PDocentes = () => {
 	return (
 		<Area>
 			<Table data={dbData} columns={headers}/>
 		</Area>
+
 	);
 };
 

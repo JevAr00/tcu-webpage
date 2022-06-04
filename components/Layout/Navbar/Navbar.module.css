@@ -9,4 +9,10 @@
   margin-top: 0.75rem;
   background-color: #E1E5F2;
   transition: all 0.5s ease-in-out;
+  
+  
+}
+
+#stickyNav a {
+  color: #6695B5;
 }

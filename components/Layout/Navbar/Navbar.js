@@ -11,10 +11,8 @@ const Header = styled.header`
 	position: fixed;
 	align-items: center;
 	padding: 1.7rem 4rem;
-	backdrop-filter: blur(1rem);
 	justify-content: space-between;
 	transition: all 0.5s ease-in-out;
-	background-color: hsl(0 0% 100% / 0.1);
 
 	nav{
 		ul{
@@ -51,7 +49,6 @@ const Header = styled.header`
 `;
 
 const Logo = styled.div`
-	color: white;
 	transition: 0.6s;
 	font-size: 1.5rem;
 	position: relative;
@@ -77,7 +74,7 @@ const A = styled.a`
 	margin: 0 0.938rem;
 	text-decoration: none;
 	letter-spacing: 0.125rem;
-	color: ${colors.secundario};
+	color: ${colors.principal};
 	
 
 	&:hover{

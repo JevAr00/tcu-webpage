@@ -40,7 +40,7 @@ const TBody = styled.tbody`
 	background-color: ${colors.principal};
 
 	::-webkit-scrollbar{
-  	width: 5px;
+  	width: 10px;
 	}
 
 	::-webkit-scrollbar-thumb:hover {

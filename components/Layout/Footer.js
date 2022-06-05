@@ -169,7 +169,7 @@ export const Footer = () => {
 				</Icons>
 			</Grid>
 			<Dev>
-				<p>Escuela Ramón Herrero Vitoria. Copyright © 2022.</p>
+				<p>Escuela Ramón Herrero Vitoria</p>
 				<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>
 			</Dev>
 		</SFooter>

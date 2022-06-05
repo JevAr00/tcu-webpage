@@ -68,7 +68,6 @@ const PDocentes = () => {
 		<Area>
 			<Table data={dbData} columns={headers}/>
 		</Area>
-
 	);
 };
 

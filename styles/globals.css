@@ -1,4 +1,11 @@
 html,
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
 body {
   -ms-overflow-style: none; /*for Internet Explorer, Edge */
   scrollbar-width: none;  /* for Firefox */
@@ -11,7 +18,7 @@ body {
 }
 
 body::-webkit-scrollbar{
-  width: 11px;
+  width: 10px;
 }
 
 body::-webkit-scrollbar-thumb:hover {

@@ -6,6 +6,7 @@ import { colors, breakpoints } from 'public/theme';
 import styles from './Navbar.module.css';
 
 const Header = styled.header`
+	z-index: 2;
 	width: 100%;
 	display: flex;
 	position: fixed;

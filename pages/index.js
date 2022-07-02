@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import styles from 'styles/Home.module.css';
 import bgImage from 'public/img/img_escuelaP.jpg';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { motion, useViewportScroll, Variant } from 'framer-motion';
 
 
 export default function Home() {
-	const { scrollYProgress } = useViewportScroll();
-	const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
 
 	return (
 		<div className={styles.container}>
@@ -18,27 +16,23 @@ export default function Home() {
 						alt= 'img'
 						layout='fill'
 						objectFit='cover'
-						objectPosition='center'
 						className={styles.bg}
 					></Image>
 				</div>
 			</main>
 			<div className={styles.mivi}>
-				<div className={styles.mision}>
+				<motion.div className={styles.mision_motion}
+				>
 					<h2 className={styles.tit_mivi}>Misión</h2>
-					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-				<div className={styles.vision}>
-					<h2 className={styles.tit_mivi}>Visión</h2>
-					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
+					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+				</motion.div>
 
-				<motion.div
-					style={{ scale }}
+				<motion.div className={styles.vision_motion}
 				>
 					<h2 className={styles.tit_mivi}>Visión</h2>
-					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				</motion.div>
+
 			</div>
 		</div>
 	);

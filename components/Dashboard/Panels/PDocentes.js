@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Table from '../Table';
+import ModalComponent from '../Modal';
 import { colors } from 'public/theme';
 import { useState } from 'react';
-import { Form, Formik, Field } from 'formik';
 
 const headers = ['Nombre', 'Apellido', 'Materia', 'Grado'];
 const dbData = [
@@ -88,79 +88,18 @@ const Button = styled.button`
 	}
 `;
 
-const Close = styled.button`
-	border: none;
-	background: none;
-	margin-right: 10px;
-	margin-top: 8px;
-	font-size: 2.5rem;
-	cursor: pointer;
-`;
-
-const TopDiv = styled.div`
-	display: flex;
-	justify-content: right;
-`;
-
-const MainDiv = styled.div`
-	display: flex;
-	justify-content: center;
-`;
-
-const Modal = styled.div`
-	visibility: ${props => props.visible === true ? 'visible' : 'hidden'};
-	display: flex;
-	position: absolute;
-	width: 90%;
-	height: 100%;
-	background: rgba(0,0,0,0.5);
-	justify-content: center;
-	align-items: center;
-`;
-
-const ModalContent = styled.div`
-	width: 1000px;
-	height: 700px;
-	border-radius: 10px;
-	background: white;
-`;
-
 const PDocentes = () => {
-
 	const [visible, setVisible] = useState(false);
-
 	return (
 		<>
 			<Area>
 				<Table data={dbData} columns={headers}/>
 			</Area>
 			<Button onClick={() => { setVisible(!visible); }}>Nuevo</Button>
-			<Modal visible={visible}>
-				<ModalContent>
-					<TopDiv>
-						<Close onClick={() => { setVisible(!visible); }}>X</Close>
-					</TopDiv>
-					<MainDiv>
-						<Formik
-							initialValues={{
-								nombre: '',
-								apellido: '',
-							}}
-							onSubmit = { (values) => {
-								alert(JSON.stringify(values));
-							}}
-						>
-							<Form>
-								<label>Nombre</label>
-								<Field name='nombre' type='text'></Field>
-								<label>Apellidos</label>
-								<Field name='apellido' type='text'></Field>
-								<button type='submit'>Ver</button>
-							</Form>
-						</Formik>
-					</MainDiv>
-				</ModalContent>
-			</Modal>
+			{ visible
+				? <ModalComponent showModal={visible}/>
+				: null
+			}
 		</>
 	);
 };

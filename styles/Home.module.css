@@ -25,16 +25,16 @@
 
 /*Misión y Visión*/
 .mision_motion{
+  height: 80vh;
   display: grid;
-  height: 110vh;
-  margin-top: 5rem;
+  margin-top: 15rem;
   align-content: center;
   justify-content: center;
 }
 .vision_motion{
+  height: 80vh;
   display: grid;
-  height: 110vh;
-  margin-top: 1rem;
+  margin-bottom: 5rem;
   align-content: center;
   justify-content: center;
 }

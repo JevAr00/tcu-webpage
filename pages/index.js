@@ -1,10 +1,19 @@
 import Image from 'next/image';
 import styles from 'styles/Home.module.css';
 import bgImage from 'public/img/img_escuelaP.jpg';
-import { motion, useViewportScroll, Variant } from 'framer-motion';
+import { motion, Variant } from 'framer-motion';
 
 
 export default function Home() {
+
+	const textAnimate = {
+		offScreen:{ y:100, opacity: 0 },
+		onScreen:{ y:0, opacity: 1,
+			transition:{ type: 'spring',
+				bounce:0.2,
+				duration:2 },
+		},
+	};
 
 	return (
 		<div className={styles.container}>
@@ -20,20 +29,48 @@ export default function Home() {
 					></Image>
 				</div>
 			</main>
-			<div className={styles.mivi}>
-				<motion.div className={styles.mision_motion}
+
+			<motion.div className={styles.mision_motion}
+				initial={'offScreen'}
+				whileInView={'onScreen'}
+				viewport={{ once:false, amount: 0.4 }}
+				transition={{ staggerChildren: 0.5 }}
+			>
+
+				<motion.div className={styles.tit_mivi}
+					variants={textAnimate}
 				>
-					<h2 className={styles.tit_mivi}>Misión</h2>
-					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+					<h2>Misión</h2>
 				</motion.div>
 
-				<motion.div className={styles.vision_motion}
+				<motion.div className={styles.tex_mivi}
+					variants={textAnimate}
 				>
-					<h2 className={styles.tit_mivi}>Visión</h2>
-					<p className={styles.tex_mivi}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+				</motion.div>
+			</motion.div>
+
+			<motion.div className={styles.vision_motion}
+				initial={'offScreen'}
+				whileInView={'onScreen'}
+				viewport={{ once:false, amount: 0.3 }}
+				transition={{ staggerChildren: 0.5 }}
+			>
+
+				<motion.div className={styles.tit_mivi}
+					variants={textAnimate}
+				>
+					<h2>Visión</h2>
 				</motion.div>
 
-			</div>
+				<motion.div className={styles.tex_mivi}
+					variants={textAnimate}
+				>
+					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+				</motion.div>
+
+			</motion.div>
+
 		</div>
 	);
 }

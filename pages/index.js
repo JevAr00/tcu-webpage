@@ -6,19 +6,34 @@ import { motion, Variant } from 'framer-motion';
 
 export default function Home() {
 
+	const Title_fadeIn = {
+		Scron:{ opacity: 0 },
+		Scroff:{ opacity: 1,
+			transition:{ type: 'spring',
+				duration: 3 },
+		},
+	};
+
 	const fadeIn = {
 		offScreen:{ y:100, opacity: 0 },
 		onScreen:{ y:0, opacity: 1,
 			transition:{ type: 'spring',
 				bounce:0.2,
-				duration:2 },
+				duration: 1 },
 		},
 	};
 
 	return (
 		<div className={styles.container}>
 			<main className={styles.main}>
-				<h1 className={styles.title}>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
+				<motion.div
+					variants={Title_fadeIn}
+					initial={'Scron'}
+					whileInView={'Scroff'}
+					viewport={{ once:false, amount: 0.7 }}>
+					<h1 className={styles.title}>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
+				</motion.div>
+
 				<div className={styles.img}>
 					<Image
 						src={bgImage}

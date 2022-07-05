@@ -16,10 +16,11 @@
 }
 
 .title {
-  margin: 0;
+  margin: 10rem;
   color: white;
   font-size: 3rem;
   line-height: 1.15;
+  user-select: none;
   text-align: center;
 }
 
@@ -44,6 +45,7 @@
   font-size: 50px;
   line-height: 1.2;
   color: #6695B5;
+  user-select: none;
   text-align: center;
   letter-spacing: 0px;
   white-space: pre-line;
@@ -64,5 +66,6 @@
   padding-inline: 10rem;
   justify-content: center;
 }
+
 
 /*Termina Misión y Visión*/

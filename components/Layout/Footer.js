@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors, breakpoints } from 'public/theme';
 import { Email, Facebook, Location, Phone, Waze } from '../Icons';
+import { motion } from 'framer-motion';
 
 const SFooter = styled.footer`
 	display: flex;
@@ -144,30 +145,45 @@ const size = {
 };
 
 export const Footer = () => {
+
+	const fadeIn = {
+		screenOn:{ opacity: 0 },
+		screenOff:{ opacity: 1,
+			transition:{ type: 'spring',
+				duration: 2 },
+		},
+	};
+
 	return (
 		<SFooter id='footer'>
 			<h1>Contáctenos</h1>
-			<Grid>
-				<Info>
-					<div>
-						<Phone {...size}/>
-						<p>2494-4812</p>
-					</div>
-					<div>
-						<Email {...size}/>
-						<p><a href="mailto:esc.ramonherrerovitoria@mep.go.cr?">esc.ramonherrerovitoria@mep.go.cr</a></p>
-					</div>
-					<div>
-						<Location {...size}/>
-						<p>Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</p>
-					</div>
-				</Info>
-				<Divisor />
-				<Icons>
-					<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><Facebook /></a>
-					<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><Waze /></a>
-				</Icons>
-			</Grid>
+			<motion.div
+				initial={'screenOn'}
+				whileInView={'screenOff'}
+				variants={fadeIn}
+				viewport={{ once:false, amount: 0.7 }}>
+				<Grid>
+					<Info>
+						<div>
+							<Phone {...size}/>
+							<p>2494-4812</p>
+						</div>
+						<div>
+							<Email {...size}/>
+							<p><a href="mailto:esc.ramonherrerovitoria@mep.go.cr?">esc.ramonherrerovitoria@mep.go.cr</a></p>
+						</div>
+						<div>
+							<Location {...size}/>
+							<p>Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</p>
+						</div>
+					</Info>
+					<Divisor />
+					<Icons>
+						<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><Facebook /></a>
+						<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><Waze /></a>
+					</Icons>
+				</Grid>
+			</motion.div>
 			<Dev>
 				<p>Escuela Ramón Herrero Vitoria</p>
 				<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>

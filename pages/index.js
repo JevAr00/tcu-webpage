@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from 'styles/Home.module.css';
 import bgImage from 'public/img/img_escuelaP.jpg';
-import { motion, Variant } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
 	};
 
 	const fadeIn = {
-		offScreen:{ y:100, opacity: 0 },
+		offScreen:{ y:50, opacity: 0 },
 		onScreen:{ y:0, opacity: 1,
 			transition:{ type: 'spring',
 				bounce:0.2,
@@ -65,7 +65,7 @@ export default function Home() {
 				<motion.div className={styles.tex_mivi}
 					variants={fadeIn}
 				>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				</motion.div>
 			</motion.div>
 
@@ -85,7 +85,7 @@ export default function Home() {
 				<motion.div className={styles.tex_mivi}
 					variants={fadeIn}
 				>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				</motion.div>
 
 			</motion.div>

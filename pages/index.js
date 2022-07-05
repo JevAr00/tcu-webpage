@@ -25,11 +25,12 @@ export default function Home() {
 
 	return (
 		<div className={styles.container}>
+
 			<div className={styles.header}>
 				<motion.div
-					variants={Title_fadeIn}
 					initial={'Scron'}
 					whileInView={'Scroff'}
+					variants={Title_fadeIn}
 					viewport={{ once:false, amount: 0.9 }}>
 
 					<h1 className={styles.title}>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
@@ -45,6 +46,7 @@ export default function Home() {
 						className={styles.bg}
 					></Image>
 				</div>
+
 			</div>
 
 			<motion.div className={styles.mision_motion}

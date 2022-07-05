@@ -13,6 +13,7 @@
 }
 
 .title {
+  z-index: 1;
   margin: 10rem;
   color: white;
   font-size: 3rem;

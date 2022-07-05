@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Table from '../Table';
 import ModalComponent from '../Modal';
+import { ModalContext } from 'utils/helpers/context';
 import { colors } from 'public/theme';
 import { useState } from 'react';
 
@@ -96,10 +97,9 @@ const PDocentes = () => {
 				<Table data={dbData} columns={headers}/>
 			</Area>
 			<Button onClick={() => { setVisible(!visible); }}>Nuevo</Button>
-			{ visible
-				? <ModalComponent showModal={visible}/>
-				: null
-			}
+			<ModalContext.Provider value={{ visible, setVisible }}>
+				<ModalComponent/>
+			</ModalContext.Provider>
 		</>
 	);
 };

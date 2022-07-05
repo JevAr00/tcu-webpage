@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from 'public/theme';
-import { useState } from 'react';
+import { ModalContext } from 'utils/helpers/context';
+import { useContext } from 'react';
 import { Form, Formik, Field } from 'formik';
 
 const Close = styled.button`
@@ -85,8 +86,8 @@ color: white;
 }
 `;
 
-const ModalComponent = ({ showModal }) => {
-	const [visible, setVisible] = useState(showModal);
+const ModalComponent = () => {
+	const { visible, setVisible } = useContext(ModalContext);
 	return (
 		<Modal visible={visible}>
 			<ModalContent>
@@ -108,11 +109,11 @@ const ModalComponent = ({ showModal }) => {
 						<SForm>
 							<Title>Información personal</Title>
 							<Label>Nombre</Label>
-							<SField autocomplete="off" name='nombre' type='text'></SField>
+							<SField autoComplete="off" name='nombre' type='text'></SField>
 							<Label>Apellidos</Label>
-							<SField autocomplete="off" name='apellido' type='text'></SField>
+							<SField autoComplete="off" name='apellido' type='text'></SField>
 							<Label>Correo Institucional</Label>
-							<SField autocomplete="off" name='correo' type='text'></SField>
+							<SField autoComplete="off" name='correo' type='text'></SField>
 							<Label>Tipo</Label>
 							<SField name='tipo' component='select'>
 								<option value="--elegir--">--elegir--</option>

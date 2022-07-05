@@ -1,4 +1,4 @@
-.main {
+.header {
   flex: 1;
   display: flex;
   min-height: 100vh;
@@ -7,11 +7,8 @@
   justify-content: center;
 }
 
-.img {
-  z-index: -1;
-}
-
 .bg {
+  z-index: -1;
   filter: brightness(38%);
 }
 

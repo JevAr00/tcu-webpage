@@ -25,25 +25,27 @@ export default function Home() {
 
 	return (
 		<div className={styles.container}>
-			<main className={styles.main}>
+			<div className={styles.header}>
 				<motion.div
 					variants={Title_fadeIn}
 					initial={'Scron'}
 					whileInView={'Scroff'}
-					viewport={{ once:false, amount: 0.7 }}>
+					viewport={{ once:false, amount: 0.9 }}>
+
 					<h1 className={styles.title}>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
+
 				</motion.div>
 
-				<div className={styles.img}>
+				<div>
 					<Image
-						src={bgImage}
 						alt= 'img'
+						src={bgImage}
 						layout='fill'
 						objectFit='cover'
 						className={styles.bg}
 					></Image>
 				</div>
-			</main>
+			</div>
 
 			<motion.div className={styles.mision_motion}
 				initial={'offScreen'}

@@ -2,11 +2,12 @@ import Image from 'next/image';
 import styles from 'styles/Home.module.css';
 import bgImage from 'public/img/img_escuelaP.jpg';
 import { motion } from 'framer-motion';
+import { MenuAlt1 } from 'styled-icons/heroicons-outline';
 
 
 export default function Home() {
 
-	const Title_fadeIn = {
+	const opacity = {
 		Scron:{ opacity: 0 },
 		Scroff:{ opacity: 1,
 			transition:{ type: 'spring',
@@ -14,7 +15,15 @@ export default function Home() {
 		},
 	};
 
-	const fadeIn = {
+	const opacityImg = {
+		Scron:{ opacity: 0 },
+		Scroff:{ opacity: 1,
+			transition:{ type: 'spring',
+				duration: 2 },
+		},
+	};
+
+	const opacity_mov = {
 		offScreen:{ y:50, opacity: 0 },
 		onScreen:{ y:0, opacity: 1,
 			transition:{ type: 'spring',
@@ -26,18 +35,22 @@ export default function Home() {
 	return (
 		<div className={styles.container}>
 
-			<div className={styles.header}>
+			<motion.div className={styles.header}
+				initial={'Scron'}
+				whileInView={'Scroff'}
+				viewport={{ once:false, amount: 0.9 }}>
+
+				<motion.div
+					className={styles.title}
+					variants={opacity}>
+					<h1>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
+				</motion.div>
+
 				<motion.div
 					initial={'Scron'}
 					whileInView={'Scroff'}
-					variants={Title_fadeIn}
-					viewport={{ once:false, amount: 0.9 }}>
-
-					<h1 className={styles.title}>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
-
-				</motion.div>
-
-				<div>
+					viewport={{ once:false, amount: 1 }}
+					variants={opacityImg}>
 					<Image
 						alt= 'img'
 						src={bgImage}
@@ -45,25 +58,26 @@ export default function Home() {
 						objectFit='cover'
 						className={styles.bg}
 					></Image>
-				</div>
+				</motion.div>
 
-			</div>
+			</motion.div>
+
 
 			<motion.div className={styles.mision_motion}
 				initial={'offScreen'}
 				whileInView={'onScreen'}
 				viewport={{ once:false, amount: 0.5 }}
-				transition={{ staggerChildren: 0.5 }}
+				transition={{ staggerChildren: 0.4 }}
 			>
 
 				<motion.div className={styles.tit_mivi}
-					variants={fadeIn}
+					variants={opacity_mov}
 				>
 					<h2>Misión</h2>
 				</motion.div>
 
 				<motion.div className={styles.tex_mivi}
-					variants={fadeIn}
+					variants={opacity_mov}
 				>
 					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				</motion.div>
@@ -73,22 +87,49 @@ export default function Home() {
 				initial={'offScreen'}
 				whileInView={'onScreen'}
 				viewport={{ once:false, amount: 0.5 }}
-				transition={{ staggerChildren: 0.5 }}
+				transition={{ staggerChildren: 0.4 }}
 			>
 
 				<motion.div className={styles.tit_mivi}
-					variants={fadeIn}
+					variants={opacity_mov}
 				>
 					<h2>Visión</h2>
 				</motion.div>
 
 				<motion.div className={styles.tex_mivi}
-					variants={fadeIn}
+					variants={opacity_mov}
 				>
 					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				</motion.div>
 
+				{/* <hr className={styles.line}></hr> */}
+
 			</motion.div>
+
+
+			<div className={styles.objetivo}>
+
+				<motion.div className={styles.objetivo_motion}
+					initial={'Scron'}
+					whileInView={'Scroff'}
+					viewport={{ once:false, amount: 0.5 }}
+					transition={{ staggerChildren: 0.4 }}>
+
+					<motion.div
+						className={styles.tit_objetivo}
+						variants={opacity}>
+						<h2>Objetivo</h2>
+					</motion.div>
+
+					<motion.div
+						className={styles.tex_objetivo}
+						variants={opacity}>
+						<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+					</motion.div>
+				</motion.div>
+
+
+			</div>
 
 		</div>
 	);

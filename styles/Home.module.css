@@ -16,7 +16,7 @@
   z-index: 1;
   margin: 10rem;
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1.15;
   user-select: none;
   text-align: center;
@@ -64,6 +64,53 @@
   padding-inline: 10rem;
   justify-content: center;
 }
+/*Fin*/
 
+/*Separador*/
+.line{
+  margin: 40px 170px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  animation-duration: 4s;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-top: 10px solid #6695B5;
+}
+/*Fin*/
 
-/*Termina Misión y Visión*/
+/*Objetivo*/
+.objetivo{
+  display: grid;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+}
+
+.tit_objetivo{
+  display: flex;
+  font-size: 50px;
+  line-height: 1.2;
+  color: #6695B5;
+  user-select: none;
+  text-align: center;
+  letter-spacing: 0px;
+  white-space: pre-line;
+  justify-content: center;
+}
+
+.tex_objetivo{
+  display: flex;
+  font-size: 30px;
+  line-height: 1.2;
+  margin-top: 5rem;
+  color: #000000;
+  text-align: center;
+  text-align: center;
+  letter-spacing: 0px;
+  margin-bottom: 15rem;
+  white-space: pre-line;
+  padding-inline: 10rem;
+  justify-content: center;
+}
+/*Fin*/

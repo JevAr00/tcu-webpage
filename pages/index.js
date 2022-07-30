@@ -41,7 +41,7 @@ export default function Home() {
 				<motion.div
 					className={styles.title}
 					variants={opacity}>
-					<h1>&quot;Una <span className={styles.escuela}>escuela</span > unida, es una <span className={styles.escuela}>escuela</span> que progresa&quot;</h1>
+					<h1>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
 				</motion.div>
 
 				<motion.div

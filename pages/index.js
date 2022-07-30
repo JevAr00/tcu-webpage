@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from 'styles/Home.module.css';
 import bgImage from 'public/img/img_escuelaP.jpg';
+import Card from 'components/Card';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -31,8 +32,7 @@ export default function Home() {
 	};
 
 	return (
-		<div className={styles.container}>
-
+		<div>
 			<motion.div className={styles.header}
 				initial={'Scron'}
 				whileInView={'Scroff'}
@@ -50,12 +50,13 @@ export default function Home() {
 					viewport={{ once:false, amount: 1 }}
 					variants={opacityImg}>
 					<Image
-						alt= 'img'
+						priority
+						alt='img'
 						src={bgImage}
 						layout='fill'
 						objectFit='cover'
 						className={styles.bg}
-					></Image>
+					 />
 				</motion.div>
 
 			</motion.div>
@@ -125,6 +126,9 @@ export default function Home() {
 			<div className={styles.docentes}>
 				<div className={styles.tit_docentes}>
 					<h2>Nuestro Personal</h2>
+				</div>
+				<div className={styles.card_container}>
+					<Card />
 				</div>
 			</div>
 		</div>

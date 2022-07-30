@@ -1,3 +1,4 @@
+/*Inicio*/
 .header {
   flex: 1;
   display: flex;
@@ -21,6 +22,18 @@
   user-select: none;
   text-align: center;
 }
+
+.escuela{
+  color: #6695B5;
+  /* text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 3px;
+  text-decoration-color: white;
+  -moz-text-decoration-color: white;
+  -moz-text-decoration-style: wavy; */
+}
+
+/*Fin*/
 
 /*Misión y Visión*/
 .mision_motion{
@@ -84,7 +97,6 @@
   display: grid;
   height: 100vh;
   align-content: center;
-  justify-content: center;
 }
 
 .tit_objetivo{
@@ -111,6 +123,26 @@
   margin-bottom: 15rem;
   white-space: pre-line;
   padding-inline: 10rem;
+  justify-content: center;
+}
+/*Fin*/
+
+/*Docentes*/
+.docentes{
+  display: grid;
+  height: 100vh;
+  /* align-content: center; */
+}
+
+.tit_docentes{
+  display: flex;
+  font-size: 50px;
+  line-height: 1.2;
+  color: #6695B5;
+  user-select: none;
+  text-align: center;
+  letter-spacing: 0px;
+  white-space: pre-line;
   justify-content: center;
 }
 /*Fin*/

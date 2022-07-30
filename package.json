@@ -8,10 +8,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.9.0",
+    "@auth0/nextjs-auth0": "^1.9.1",
     "formik": "^2.2.9",
-    "framer-motion": "^6.3.16",
-    "mongoose": "^6.3.8",
+    "framer-motion": "^6.5.1",
+    "mongoose": "^6.5.0",
     "next": "^12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -19,7 +19,7 @@
     "styled-icons": "^10.45.0"
   },
   "devDependencies": {
-    "eslint": "8.8.0",
+    "eslint": "8.20.0",
     "eslint-config-next": "12.0.9"
   }
 }

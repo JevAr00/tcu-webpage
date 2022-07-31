@@ -15,7 +15,7 @@ body {
   overflow-y: auto;/*Scrollbar editable*/
   scrollbar-width: none;  /* for Firefox */
   -ms-overflow-style: none; /*for Internet Explorer, Edge */
-  background-color: #6695B5;
+  background-color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }

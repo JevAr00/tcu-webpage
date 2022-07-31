@@ -26,18 +26,23 @@
 
 /*Misión y Visión*/
 .mision_motion{
-  height: 80vh;
+  width: 100%;
   display: grid;
-  margin-top: 15rem;
+  min-height: 80vh;
+  padding-top: 20rem;
+  padding-bottom: 10rem;
   align-content: center;
   justify-content: center;
+  background-color: #fff;
 }
 .vision_motion{
-  height: 80vh;
+  width: 100%;
   display: grid;
-  margin-bottom: 5rem;
+  min-height: 80vh;
+  padding-bottom: 7rem;
   align-content: center;
   justify-content: center;
+  background-color: #fff;
 }
 
 .tit_mivi{
@@ -83,9 +88,11 @@
 
 /*Objetivo*/
 .objetivo{
+  width: 100%;
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   align-content: center;
+  background-color: #fff;
 }
 
 .tit_objetivo{
@@ -118,21 +125,22 @@
 
 /*Docentes*/
 .docentes{
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  display: flex;
+  min-height: 110vh;
+  flex-direction: column;
   background-color: #6695B5;
-  /* align-content: center; */
 }
 
 .tit_docentes{
   display: flex;
+  color: #fff;
   font-size: 50px;
   line-height: 1.2;
-  color: #fff;
   user-select: none;
+  padding-top: 10rem;
   text-align: center;
-  letter-spacing: 0px;
+  padding-bottom: 5rem;
   white-space: pre-line;
   justify-content: center;
 }
@@ -140,6 +148,6 @@
 
 .card_container{
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }

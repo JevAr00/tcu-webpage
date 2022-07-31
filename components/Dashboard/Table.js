@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import { colors } from 'public/theme';
+import ModalComponent from './Modal';
+import { ModalContext } from 'utils/helpers/context';
 
 
 const TableContainer = styled.div`
@@ -53,6 +56,10 @@ const TBody = styled.tbody`
   	background-color: hsla(204, 44%, 55%, 0.726);
 	}
 
+	tr{
+		cursor: pointer;
+	}
+
 	td {
 		height: 4rem;
   	font-weight: 400;
@@ -63,32 +70,44 @@ const TBody = styled.tbody`
 `;
 
 const DataTable = ({ data, columns }) => {
+	const [visible, setVisible] = useState(false);
+	const [info, setInfo] = useState({});
+
+	const getCurrentRow = (selectedRow) => {
+		setInfo(selectedRow);
+		setVisible(!visible);
+	};
 	return (
-		<TableContainer>
-			<Table>
-				<THead>
-					<tr>
+		<>
+			<TableContainer>
+				<Table>
+					<THead>
+						<tr>
+							{
+								columns.map((columna) => (
+									<th key={columna}>{columna}</th>
+								))
+							}
+						</tr>
+					</THead>
+					<TBody>
 						{
-							columns.map((columna) => (
-								<th key={columna}>{columna}</th>
+							data.map((datos) => (
+								<tr key={datos} onClick={() => getCurrentRow(datos)}>
+									<td>{datos.nombre}</td>
+									<td>{datos.apellido}</td>
+									<td>{datos.correo}</td>
+									<td>{datos.tipo}</td>
+								</tr>
 							))
 						}
-					</tr>
-				</THead>
-				<TBody>
-					{
-						data.map((datos) => (
-							<tr key={datos}>
-								<td>{datos.nombre}</td>
-								<td>{datos.apellido}</td>
-								<td>{datos.materias}</td>
-								<td>{datos.grado}</td>
-							</tr>
-						))
-					}
-				</TBody>
-			</Table>
-		</TableContainer>
+					</TBody>
+				</Table>
+			</TableContainer>
+			<ModalContext.Provider value={{ visible, setVisible }}>
+				<ModalComponent activeButton={visible} dataRow={info}/>
+			</ModalContext.Provider>
+		</>
 	);
 };
 

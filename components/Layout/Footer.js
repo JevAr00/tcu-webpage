@@ -27,6 +27,12 @@ const SFooter = styled.footer`
 	}
 `;
 
+const Div = styled.footer`
+	width: 100%;
+	min-height: 34rem;
+	background-color: ${colors.secundario};
+`;
+
 // #region Grid
 const Grid = styled.div`
 	display: flex;
@@ -156,50 +162,52 @@ export const Footer = () => {
 	};
 
 	return (
-		<SFooter id='footer'>
-			<h1>Contáctenos</h1>
-			<motion.div
-				variants={fadeIn}
-				initial={'screenOn'}
-				whileInView={'screenOff'}
-				transition={{ staggerChildren: 0.2 }}
-				viewport={{ once:false, amount: 0.7 }}>
-				<Grid>
-					<Info>
-						<div>
-							<Phone {...size}/>
-							<p><a href="tel:+50624944812">2494-4812</a></p>
-						</div>
-						<div>
-							<Email {...size}/>
-							<p><a href="mailto:esc.ramonherrerovitoria@mep.go.cr?">esc.ramonherrerovitoria@mep.go.cr</a></p>
-						</div>
-						<div>
-							<Location {...size}/>
-							<p><a href="https://goo.gl/maps/KripKY3aTpqe8VDB8">Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</a></p>
-						</div>
-					</Info>
-					<Divisor/>
-					<Icons>
-						<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><Facebook /></a>
-						<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><Waze /></a>
-					</Icons>
-				</Grid>
-			</motion.div>
+		<Div>
+			<SFooter id='footer' >
+				<h1>Contáctenos</h1>
+				<motion.div
+					variants={fadeIn}
+					initial={'screenOn'}
+					whileInView={'screenOff'}
+					transition={{ staggerChildren: 0.2 }}
+					viewport={{ once:false, amount: 0.7 }}>
+					<Grid>
+						<Info>
+							<div>
+								<Phone {...size}/>
+								<p><a href="tel:+50624944812">2494-4812</a></p>
+							</div>
+							<div>
+								<Email {...size}/>
+								<p><a href="mailto:esc.ramonherrerovitoria@mep.go.cr?">esc.ramonherrerovitoria@mep.go.cr</a></p>
+							</div>
+							<div>
+								<Location {...size}/>
+								<p><a href="https://goo.gl/maps/KripKY3aTpqe8VDB8">Puente de Piedra, La Argentina, Diagonal a la plaza de Deportes.</a></p>
+							</div>
+						</Info>
+						<Divisor/>
+						<Icons>
+							<a href='https://www.facebook.com/escuelaramon.herrerovitoria' target='_blank' rel="noreferrer"><Facebook /></a>
+							<a href='https://ul.waze.com/ul?preview_venue_id=180617316.1806500843.680297&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location' target='_blank' rel="noreferrer"><Waze /></a>
+						</Icons>
+					</Grid>
+				</motion.div>
 
-			<motion.div
-				variants={fadeIn}
-				initial={'screenOn'}
-				whileInView={'screenOff'}
-				transition={{ staggerChildren: 0.2 }}
-				viewport={{ once:false, amount: 0.9 }}>
-				<Dev>
-					<p>Escuela Ramón Herrero Vitoria</p>
-					<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>
-				</Dev>
-			</motion.div>
+				<motion.div
+					variants={fadeIn}
+					initial={'screenOn'}
+					whileInView={'screenOff'}
+					transition={{ staggerChildren: 0.2 }}
+					viewport={{ once:false, amount: 0.9 }}>
+					<Dev>
+						<p>Escuela Ramón Herrero Vitoria</p>
+						<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>
+					</Dev>
+				</motion.div>
 
-		</SFooter>
+			</SFooter>
+		</Div>
 	);
 };
 

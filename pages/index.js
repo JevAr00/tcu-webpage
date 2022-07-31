@@ -31,6 +31,15 @@ export default function Home() {
 		},
 	};
 
+	const animation_cards = {
+		Visible:{ y:50, opacity: 0 },
+		noVisible:{ y:0, opacity: 1,
+			transition:{ type: 'spring',
+				bounce:0.2,
+				duration: 1 },
+		},
+	};
+
 	return (
 		<div>
 			<motion.div className={styles.header}
@@ -105,32 +114,56 @@ export default function Home() {
 			</motion.div>
 
 			<motion.div className={styles.objetivo}
-				initial={'Scron'}
-				whileInView={'Scroff'}
+				initial={'offScreen'}
+				whileInView={'onScreen'}
 				viewport={{ once:false, amount: 0.5 }}
 				transition={{ staggerChildren: 0.4 }}>
 
 				<motion.div
 					className={styles.tit_objetivo}
-					variants={opacity}>
+					variants={opacity_mov}>
 					<h2>Objetivo</h2>
 				</motion.div>
 
 				<motion.div
 					className={styles.tex_objetivo}
-					variants={opacity}>
+					variants={opacity_mov}>
 					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				</motion.div>
 			</motion.div>
 
-			<div className={styles.docentes}>
-				<div className={styles.tit_docentes}>
+			<motion.div className={styles.docentes}
+				initial={'Scron'}
+				whileInView={'Scroff'}
+				viewport={{ once:false, amount: 0.4 }}>
+
+				<motion.div className={styles.tit_docentes}
+					variants={opacity}>
 					<h2>Nuestro Personal</h2>
-				</div>
-				<div className={styles.card_container}>
-					<Card />
-				</div>
-			</div>
+				</motion.div>
+
+				<motion.div className={styles.card_container}
+					initial={'Visible'}
+					whileInView={'noVisible'}
+					viewport={{ once:false, amount: 0.5 }}
+					transition={{ staggerChildren: 0.2 }}>
+
+					<motion.div variants={animation_cards}>
+						<Card/>
+					</motion.div>
+					<motion.div variants={animation_cards}>
+						<Card/>
+					</motion.div>
+					<motion.div variants={animation_cards}>
+						<Card/>
+					</motion.div>
+					<motion.div variants={animation_cards}>
+						<Card/>
+					</motion.div>
+
+				</motion.div>
+			</motion.div>
+
 		</div>
 	);
 }

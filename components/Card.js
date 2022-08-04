@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import defprof from 'public/img/defaultprofile.jpg';
-import { motion } from 'framer-motion';
 
 const CardBody = styled.div`
   text-align: center;
@@ -42,15 +41,13 @@ const CardMail = styled.h3`
 
 const Card = () => {
 	return (
-		<motion.div>
-			<CardBody>
-				<CardTitle>Administrativo</CardTitle>
-				<Image src={defprof} alt="profile picture" width="194" height="194"/>
-				<CardName>Benjamin Fernando</CardName>
-				<CardLastN>Hernandez Hernandez</CardLastN>
-				<CardMail>benjaminhernadez20@mep.go.cr</CardMail>
-			</CardBody>
-		</motion.div>
+		<CardBody>
+			<CardTitle>Administrativo</CardTitle>
+			<Image src={defprof} alt="profile picture" width="194" height="194"/>
+			<CardName>Benjamin Fernando</CardName>
+			<CardLastN>Hernandez Hernandez</CardLastN>
+			<CardMail>benjaminhernadez20@mep.go.cr</CardMail>
+		</CardBody>
 	);
 };
 

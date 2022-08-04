@@ -163,14 +163,14 @@ export const Footer = () => {
 
 	return (
 		<Div>
-			<SFooter id='footer' >
+			<SFooter id='Contacto' >
 				<h1>Contáctenos</h1>
 				<motion.div
 					variants={fadeIn}
 					initial={'screenOn'}
 					whileInView={'screenOff'}
-					transition={{ staggerChildren: 0.2 }}
-					viewport={{ once:false, amount: 0.7 }}>
+					transition={{ staggerChildren: 0.3 }}
+					viewport={{ once:false, amount: 0.4 }}>
 					<Grid>
 						<Info>
 							<div>
@@ -199,7 +199,7 @@ export const Footer = () => {
 					initial={'screenOn'}
 					whileInView={'screenOff'}
 					transition={{ staggerChildren: 0.2 }}
-					viewport={{ once:false, amount: 0.9 }}>
+					viewport={{ once:false, amount: 0.5 }}>
 					<Dev>
 						<p>Escuela Ramón Herrero Vitoria</p>
 						<p>by <a href='https://github.com/Soju13' target='_blank' rel="noreferrer">Jarot C</a>, <a href='https://github.com/JevAr00' target='_blank' rel="noreferrer">Kevin A</a> & <a href='https://github.com/alejimenez1' target='_blank' rel="noreferrer">Luis D</a></p>

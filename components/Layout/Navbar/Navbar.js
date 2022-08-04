@@ -112,9 +112,9 @@ const Navbar = () => {
 				<SMenu/>
 				<ul>
 					<li><Link href='/' passHref><A>Inicio</A></Link></li>
-					<li><Link href='#' passHref><A>Nosotros</A></Link></li>
-					<li><Link href='#' passHref><A>Nuestro Personal</A></Link></li>
-					<li><Link href='#footer' passHref><A>Contacto</A></Link></li>
+					<li><Link href='#Nosotros' passHref><A>Nosotros</A></Link></li>
+					<li><Link href='#Personal' passHref><A>Nuestro Personal</A></Link></li>
+					<li><Link href='#Contacto' passHref><A>Contacto</A></Link></li>
 				</ul>
 			</nav>
 		</Header>

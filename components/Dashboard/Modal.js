@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from 'public/theme';
 import { ModalContext } from 'utils/helpers/context';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Form, Formik, Field } from 'formik';
 
 const Close = styled.button`
@@ -32,6 +32,7 @@ height: 100%;
 background: rgba(0,0,0,0.5);
 justify-content: center;
 align-items: center;
+z-index: 1;
 `;
 
 const ModalContent = styled.div`
@@ -86,8 +87,38 @@ color: white;
 }
 `;
 
-const ModalComponent = () => {
+const DeleteButton = styled.button`
+visibility: ${props => props.active === true ? 'visible' : 'hidden'};
+width: 10rem;
+height: 2.6rem;
+font-size: 15px; 
+position: absolute;
+bottom: 20%;
+right: 64%;
+border: 0;
+border-radius: 6px;
+background-color: ${colors.secundario};
+color: white;
+
+&:hover{
+  cursor: pointer;
+  background-color: #45D583;
+}
+
+&:active{
+  background-color: ${colors.secundario};
+  opacity: 0.75;
+}
+`;
+
+const ModalComponent = ({ activeButton, dataRow }) => {
 	const { visible, setVisible } = useContext(ModalContext);
+	const [ info, setInfo ] = useState({});
+
+	useEffect(() => {
+		setInfo(dataRow);
+	}, [dataRow]);
+
 	return (
 		<Modal visible={visible}>
 			<ModalContent>
@@ -97,11 +128,12 @@ const ModalComponent = () => {
 				<MainDiv>
 					<Formik
 						initialValues={{
-							nombre: '',
-							apellido: '',
-							correo: '',
-							tipo: '--elegir--',
+							nombre: info ? info.nombre : '',
+							apellido: info ? info.apellido : '',
+							correo: info ? info.correo : '',
+							tipo: info ? info.tipo : '--elegir--',
 						}}
+						enableReinitialize={true}
 						onSubmit = { (values) => {
 							alert(JSON.stringify(values));
 						}}
@@ -109,11 +141,11 @@ const ModalComponent = () => {
 						<SForm>
 							<Title>Información personal</Title>
 							<Label>Nombre</Label>
-							<SField autoComplete="off" name='nombre' type='text'></SField>
+							<SField autoComplete="off" name='nombre' type='text' />
 							<Label>Apellidos</Label>
-							<SField autoComplete="off" name='apellido' type='text'></SField>
+							<SField autoComplete="off" name='apellido' type='text' />
 							<Label>Correo Institucional</Label>
-							<SField autoComplete="off" name='correo' type='text'></SField>
+							<SField autoComplete="off" name='correo' type='text' />
 							<Label>Tipo</Label>
 							<SField name='tipo' component='select'>
 								<option value="--elegir--">--elegir--</option>
@@ -123,6 +155,7 @@ const ModalComponent = () => {
 								<option value="Miscelanio">Miscelanio</option>
 							</SField>
 							<SendButton type='submit'>Guardar</SendButton>
+							<DeleteButton type="button" active={activeButton} onClick={''}>Eliminar</DeleteButton>
 						</SForm>
 					</Formik>
 				</MainDiv>

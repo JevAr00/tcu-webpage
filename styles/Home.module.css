@@ -1,12 +1,13 @@
 /*Inicio*/
 .inicio {
-  flex: 1;
   display: flex;
+  min-width: 100vh;
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
+  position: unset
 }
 
 .title{
@@ -16,6 +17,13 @@
   line-height: 1.15;
   user-select: none;
   text-align: center;
+}
+
+.bgImage{
+  width: 100%;
+  min-width: 100vh;
+  min-height: 100vh;
+  position: absolute;
 }
 
 .bg {
@@ -28,9 +36,12 @@
 
 /*Misión, Visión y Objetivo*/
 .elements{
+  min-width: 100vh;
+  min-height: 100vh;
   scroll-snap-stop: normal;
   scroll-snap-align: center;
 }
+
 
 .elements h2{
   display: flex;
@@ -62,40 +73,43 @@
   background-color: #e1e5f2;
 }
 
-.mision{ 
+.mision{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  min-width: 100vh;
   min-height: 100vh;
   padding-top: 10rem;
   padding-bottom: 0rem;
   flex-direction: column;
   justify-content: center;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .vision{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  min-width: 100vh;
   min-height: 100vh;
   padding-top: 10rem;
   padding-bottom: 0rem;
   flex-direction: column;
   justify-content: center;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .objetivo{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  min-width: 100vh;
   min-height: 100vh;
   padding-top: 10rem;
   padding-bottom: 0rem;
   flex-direction: column;
   justify-content: center;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 /*Fin*/
 
@@ -119,6 +133,7 @@
   border: none;
   display: flex;
   overflow: hidden;
+  min-width: 100vh;
   min-height: 110vh;
   position: relative;
   flex-direction: column;
@@ -143,6 +158,8 @@
   border: none;
   display: flex;
   flex-wrap: wrap;
+  min-width: 100vh;
+  min-height: 110vh;
   padding-bottom: 1.3rem;
   justify-content: center;
   scroll-snap-align: inline;

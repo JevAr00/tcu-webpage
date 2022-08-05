@@ -63,11 +63,12 @@ export default function Home() {
 					<h1>&quot;Una escuela unida, es una escuela que progresa&quot;</h1>
 				</motion.div>
 
-				<motion.div
+				<motion.div className={styles.bgImage}
 					initial={'Scron'}
 					whileInView={'Scroff'}
 					viewport={{ once:false, amount: 1 }}
 					variants={opacityImg}>
+
 					<Image
 						priority
 						alt='img'
@@ -76,6 +77,7 @@ export default function Home() {
 						objectFit='cover'
 						className={styles.bg}
 					 />
+
 				</motion.div>
 
 			</motion.div>

@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 
 const SFooter = styled.footer`
 	display: flex;
-	min-height: 34rem;
+	min-width: 100vh;
+  min-height: 50vh;
 	flex-direction: column;
 	border-radius: 30px 30px 0px 0px;
 	background-color: ${colors.footer};

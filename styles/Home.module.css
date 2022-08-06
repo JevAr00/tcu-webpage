@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
-  position: unset
+
 }
 
 .title{
@@ -31,7 +31,6 @@
   filter: brightness(38%);
   -webkit-filter: brightness(38%);
 }
-
 /*Fin*/
 
 /*Misión, Visión y Objetivo*/
@@ -41,7 +40,6 @@
   scroll-snap-stop: normal;
   scroll-snap-align: center;
 }
-
 
 .elements h2{
   display: flex;
@@ -80,7 +78,6 @@
   min-width: 100vh;
   min-height: 100vh;
   padding-top: 10rem;
-  padding-bottom: 0rem;
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
@@ -93,7 +90,6 @@
   min-width: 100vh;
   min-height: 100vh;
   padding-top: 10rem;
-  padding-bottom: 0rem;
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
@@ -106,7 +102,6 @@
   min-width: 100vh;
   min-height: 100vh;
   padding-top: 10rem;
-  padding-bottom: 0rem;
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
@@ -134,7 +129,7 @@
   display: flex;
   overflow: hidden;
   min-width: 100vh;
-  min-height: 110vh;
+  min-height: 100vh;
   position: relative;
   flex-direction: column;
   scroll-snap-align: start;
@@ -146,11 +141,11 @@
   font-size: 50px;
   color: #ffffff;
   line-height: 1.2;
+  min-width: 100vh;
   user-select: none;
   padding-top: 4rem;
   text-align: center;
   white-space: pre-line;
-  padding-bottom: 0.4rem;
 }
 
 .card_container{
@@ -159,15 +154,42 @@
   display: flex;
   flex-wrap: wrap;
   min-width: 100vh;
-  min-height: 110vh;
+  min-height: 100vh;
   padding-bottom: 1.3rem;
   justify-content: center;
-  scroll-snap-align: inline;
 }
 
 .bgPersonal{
   z-index: -1;
   filter: blur(0.155rem) opacity(50%);
   -webkit-filter: blur(0.155rem) opacity(50%);
+}
+/*Fin*/
+
+/*Quitar Scroll Snap*/
+@media (max-width: 900px) {
+  .elements{
+    scroll-snap-stop: none;
+    scroll-snap-align: none;
+  }
+  .inicio{
+    scroll-snap-stop: none;
+    scroll-snap-align: none;
+  }
+  .personal{
+    scroll-snap-stop: none;
+    scroll-snap-align: none;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 300px){
+  .contenido{
+    min-width: 150vh;
+    min-height: 100vh;
+    }
+    .bgImage{
+      min-width: 150vh;
+      min-height: 100vh;
+    }
 }
 /*Fin*/

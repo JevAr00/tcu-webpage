@@ -8,6 +8,12 @@ html,
   scroll-snap-type: y proximity;
 }
 
+@media (max-width: 1250px) {
+  *{
+    scroll-snap-type: none;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;

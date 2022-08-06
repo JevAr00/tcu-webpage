@@ -50,7 +50,7 @@ export default function Home() {
 	};
 
 	return (
-		<div>
+		<div className={styles.contenido}>
 
 			<motion.div className={styles.inicio}
 				initial={'Scroon'}
@@ -66,7 +66,7 @@ export default function Home() {
 				<motion.div className={styles.bgImage}
 					initial={'Scron'}
 					whileInView={'Scroff'}
-					viewport={{ once:false, amount: 1 }}
+					viewport={{ once:false, amount: 0.5 }}
 					variants={opacityImg}>
 
 					<Image
@@ -182,7 +182,7 @@ export default function Home() {
 				<motion.div className={styles.card_container}
 					initial={'Visible'}
 					whileInView={'noVisible'}
-					viewport={{ once:false, amount: 0.4 }}
+					viewport={{ once:false, amount: 0.1 }}
 					transition={{ staggerChildren: 0.3 }}>
 
 					<motion.div variants={animation_cards}>

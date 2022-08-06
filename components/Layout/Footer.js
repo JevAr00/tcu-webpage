@@ -30,15 +30,20 @@ const SFooter = styled.footer`
 
 const Div = styled.footer`
 	width: 100%;
-	min-height: 34rem;
+	min-width: 100vh;
+	min-height: 50vh;
 	background-color: ${colors.secundario};
+
+	@media(max-width: 700px) and (min-width: 300px){
+		min-width: 150vh;
+	}
 `;
 
 // #region Grid
 const Grid = styled.div`
 	display: flex;
-	justify-content: center;
 	padding: 1rem 1.5rem;
+	justify-content: center;
 
 	@media (max-width: ${breakpoints.large}) {
 		flex-direction: column;
@@ -103,16 +108,16 @@ const Divisor = styled.div`
 	background-color: #66738d;
 
 	@media (max-width: ${breakpoints.large}) {
-		margin: 1.4rem 0 0 0;
-		align-self: center;
 		width: 80%;
 		height: 11px;
+		align-self: center;
+		margin: 1.4rem 0 0 0;
 	}
 `;
 
 const Icons = styled.div`
-	display: flex;
 	width: 25%;
+	display: flex;
 	justify-content: space-evenly;
 
 	a{

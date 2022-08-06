@@ -1,23 +1,32 @@
 import mongoose from 'mongoose';
 
 const personalSchema = new mongoose.Schema({
-	id:{},
+	idP:{ type: mongoose.Schema.Types.ObjectId,
+	},
 	nombre: {
 		type: String,
-		required: [true, ''],
+
 	},
 	apellido:{
 		type: String,
-		required: [true, ''],
+
 	},
 	correo:{
 		type: String,
-		required: [true, ''],
+
 	},
 	tipo:{
 		type: String,
-		required: [true, ''],
+
 	},
 });
 
-export default mongoose.models.Personal || mongoose.model('Personal', personalSchema);
+personalSchema.set('toJSON', {
+	transform: (document, returnedObject) => {
+		// returnedObject.id = returnedObject._id.toString();
+		// delete returnedObject._id;
+		delete returnedObject.__v;
+
+	} });
+
+export default mongoose.models.Personal || mongoose.model('Personal', personalSchema, 'personal');

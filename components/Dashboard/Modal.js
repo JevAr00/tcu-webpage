@@ -1,19 +1,11 @@
 import styled from 'styled-components';
 import { colors } from 'public/theme';
+import Close from 'components/Icons/Close';
+import Delete from 'components/Icons/Delete';
 import { ModalContext } from 'utils/helpers/context';
 import { useContext, useEffect, useState } from 'react';
 import { Form, Formik, Field } from 'formik';
 import axios from 'axios';
-
-
-const Close = styled.button`
-border: none;
-background: none;
-margin-right: 20px;
-margin-top: 8px;
-font-size: 2.5rem;
-cursor: pointer;
-`;
 
 const TopDiv = styled.div`
 display: flex;
@@ -70,9 +62,9 @@ const SendButton = styled.button`
 width: 10rem;
 height: 2.6rem;
 font-size: 15px; 
-position: absolute;
-bottom: 20%;
-right: 24%;
+position: relative;
+top: 16%;
+left: 82%;
 border: 0;
 border-radius: 6px;
 background-color: ${colors.secundario};
@@ -80,31 +72,7 @@ color: white;
 
 &:hover{
   cursor: pointer;
-  background-color: #45D583;
-}
-
-&:active{
-  background-color: ${colors.secundario};
-  opacity: 0.75;
-}
-`;
-
-const DeleteButton = styled.button`
-visibility: ${props => props.active === true ? 'visible' : 'hidden'};
-width: 10rem;
-height: 2.6rem;
-font-size: 15px; 
-position: absolute;
-bottom: 20%;
-right: 64%;
-border: 0;
-border-radius: 6px;
-background-color: ${colors.secundario};
-color: white;
-
-&:hover{
-  cursor: pointer;
-  background-color: #45D583;
+  background-color: #3BC17E;
 }
 
 &:active{
@@ -127,7 +95,7 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 		<Modal visible={visible}>
 			<ModalContent>
 				<TopDiv>
-					<Close onClick={() => { setVisible(!visible); }}>X</Close>
+					<Close onClick={() => { setVisible(!visible);} }/>
 				</TopDiv>
 				<MainDiv>
 					<Formik
@@ -167,7 +135,7 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 								<option value="Miscelanio">Miscelanio</option>
 							</SField>
 							<SendButton type='submit'>Guardar</SendButton>
-							<DeleteButton type="button" active={activeButton} onClick={() => {handlerDelete;}}>Eliminar</DeleteButton>
+							<Delete type="button" active={activeButton} onClick={() => {handlerDelete;}} />
 						</SForm>
 					</Formik>
 				</MainDiv>

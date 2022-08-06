@@ -93,7 +93,7 @@ const DataTable = ({ data, columns }) => {
 					<TBody>
 						{
 							data.map((datos) => (
-								<tr key={datos} onClick={() => getCurrentRow(datos)}>
+								<tr key={datos.idP} onClick={() => getCurrentRow(datos)}>
 									<td>{datos.nombre}</td>
 									<td>{datos.apellido}</td>
 									<td>{datos.correo}</td>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import defprof from 'public/img/defaultprofile.jpg';
+import defprof from 'public/img/defaultprofile.png';
 
 const CardBody = styled.div`
   text-align: center;

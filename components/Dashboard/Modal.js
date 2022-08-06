@@ -3,6 +3,8 @@ import { colors } from 'public/theme';
 import { ModalContext } from 'utils/helpers/context';
 import { useContext, useEffect, useState } from 'react';
 import { Form, Formik, Field } from 'formik';
+import axios from 'axios';
+
 
 const Close = styled.button`
 border: none;
@@ -115,6 +117,8 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 	const { visible, setVisible } = useContext(ModalContext);
 	const [ info, setInfo ] = useState({});
 
+	const handlerDelete = async (id) => { await axios.delete(`api/personal/delete/${id}`);};
+	console.log(dataRow);
 	useEffect(() => {
 		setInfo(dataRow);
 	}, [dataRow]);
@@ -135,7 +139,15 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 						}}
 						enableReinitialize={true}
 						onSubmit = { (values) => {
-							alert(JSON.stringify(values));
+
+							(async () => {
+
+								const res =	await axios.post ('api/personal/post', { nombre:values.nombre, apellido:values.apellido, correo:values.correo, tipo:values.tipo });
+
+								if (res.status == 201) {alert('agregado');}
+							})();
+
+
 						}}
 					>
 						<SForm>
@@ -155,7 +167,7 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 								<option value="Miscelanio">Miscelanio</option>
 							</SField>
 							<SendButton type='submit'>Guardar</SendButton>
-							<DeleteButton type="button" active={activeButton} onClick={''}>Eliminar</DeleteButton>
+							<DeleteButton type="button" active={activeButton} onClick={() => {handlerDelete;}}>Eliminar</DeleteButton>
 						</SForm>
 					</Formik>
 				</MainDiv>

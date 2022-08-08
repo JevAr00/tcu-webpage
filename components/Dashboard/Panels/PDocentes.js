@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import axios from 'axios';
 import Table from '../Table';
+import styled from 'styled-components';
 import ModalComponent from '../Modal';
-import { ModalContext } from 'utils/helpers/context';
 import { colors } from 'public/theme';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { ModalContext } from 'utils/helpers/context';
 
 const headers = ['Nombre', 'Apellido', 'Correo', 'Tipo'];
 
@@ -20,24 +20,24 @@ const Area = styled.div`
 `;
 
 const Button = styled.button`
+	border: 0;
+	right: 10%;
+	bottom: 27%;
 	width: 8rem;
+	color: white;
 	height: 2.5rem;
 	font-size: 15px; 
 	position: absolute;
-	bottom: 27%;
-	right: 10%;
-	border: 0;
 	border-radius: 6px;
 	background-color: ${colors.secundario};
-	color: white;
 
 	&:hover{
 		cursor: pointer;
 	}
 
 	&:active{
-		background-color: ${colors.secundario};
 		opacity: 0.75;
+		background-color: ${colors.secundario};
 	}
 `;
 

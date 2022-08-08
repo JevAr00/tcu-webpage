@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { useState } from 'react';
-import { colors } from 'public/theme';
 import ModalComponent from './Modal';
+import { colors } from 'public/theme';
+import styled from 'styled-components';
 import { ModalContext } from 'utils/helpers/context';
 
 
@@ -77,6 +77,7 @@ const DataTable = ({ data, columns }) => {
 		setInfo(selectedRow);
 		setVisible(!visible);
 	};
+
 	return (
 		<>
 			<TableContainer>

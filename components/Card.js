@@ -1,53 +1,73 @@
-import styled from 'styled-components';
+import axios from 'axios';
 import Image from 'next/image';
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import defprof from 'public/img/defaultprofile.png';
 
 const CardBody = styled.div`
-  text-align: center;
   width: 330px;
-  height: 490px;
   margin: 20pt;
-  background-color: #fff;
+  height: 490px;
+  text-align: center;
   border-radius: 37px;
+  background-color: #fff;
 `;
 
 const CardTitle = styled.h1`
-  padding: 10pt 0 26pt 0;
-  font-size: 2.2rem;
   color: #57A6DB;
   font-weight: 500;
+  font-size: 2.2rem;
+  padding: 10pt 0 26pt 0;
 `;
 
 const CardName = styled.h2`
+  color: black;
   padding-top: 15pt;
   font-size: 1.8rem;
-  color: black;
   font-weight: normal;
 `;
 
 const CardLastN = styled.h2`
+  color: black;
   padding-top: 2pt;
   font-size: 1.4rem;
-  color: black;
   font-weight: normal;
 `;
 
 const CardMail = styled.h3`
-  padding-top: 34pt;
-  font-size: 1.2rem;
   color: black;
   font-weight: 400;
+  padding-top: 34pt;
+  font-size: 1.2rem;
 `;
 
 const Card = () => {
+
+	const [info, setInfo] = useState([]);
+
+	useEffect(() => {
+		(async () => {
+			const { data } = await axios.get('api/personal/getPersonal');
+			setInfo(data);
+		})();
+	}, []);
+
 	return (
-		<CardBody>
-			<CardTitle>Administrativo</CardTitle>
-			<Image src={defprof} alt="profile picture" width="194" height="194"/>
-			<CardName>Benjamin Fernando</CardName>
-			<CardLastN>Hernandez Hernandez</CardLastN>
-			<CardMail>benjaminhernadez20@mep.go.cr</CardMail>
-		</CardBody>
+		<>
+			{
+				info.map((item) => (
+
+					<CardBody key={item.idP}>
+						<CardTitle>{item.tipo}</CardTitle>
+						<Image src={defprof} alt="profile picture" width="194" height="194"/>
+						<CardName>{item.nombre}</CardName>
+						<CardLastN>{item.apellido}</CardLastN>
+						<CardMail>{item.correo}</CardMail>
+		      </CardBody>
+
+				))
+			}
+		</>
 	);
 };
 

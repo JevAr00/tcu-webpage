@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import axios from 'axios';
 import { colors } from 'public/theme';
+import styled from 'styled-components';
 import Close from 'components/Icons/Close';
+import { Form, Formik, Field } from 'formik';
 import Delete from 'components/Icons/Delete';
 import { ModalContext } from 'utils/helpers/context';
 import { useContext, useEffect, useState } from 'react';
-import { Form, Formik, Field } from 'formik';
-import axios from 'axios';
 
 const TopDiv = styled.div`
 display: flex;
@@ -18,28 +18,28 @@ justify-content: center;
 `;
 
 const Modal = styled.div`
-visibility: ${props => props.visible === true ? 'visible' : 'hidden'};
-display: flex;
-position: absolute;
+z-index: 1;
 width: 90%;
 height: 100%;
-background: rgba(0,0,0,0.5);
-justify-content: center;
+display: flex;
+position: absolute;
 align-items: center;
-z-index: 1;
+justify-content: center;
+background: rgba(0,0,0,0.5);
+visibility: ${props => props.visible === true ? 'visible' : 'hidden'};
 `;
 
 const ModalContent = styled.div`
 width: 1000px;
 height: 700px;
-border-radius: 10px;
 background: white;
+border-radius: 10px;
 `;
 
 const SForm = styled(Form)`
+flex: 0.8;
 display: flex;
 flex-direction: column;
-flex: 0.8;
 `;
 
 const Title = styled.h1`
@@ -48,8 +48,8 @@ margin-bottom: 2rem;
 `;
 
 const Label = styled.label`
-margin-bottom: 0.2rem;
 font-size: 1.4rem;
+margin-bottom: 0.2rem;
 `;
 
 const SField = styled(Field)`
@@ -59,16 +59,16 @@ margin-bottom: 2rem;
 `;
 
 const SendButton = styled.button`
+top: 16%;
+border: 0;
+left: 82%;
 width: 10rem;
+color: white;
 height: 2.6rem;
 font-size: 15px; 
 position: relative;
-top: 16%;
-left: 82%;
-border: 0;
 border-radius: 6px;
 background-color: ${colors.secundario};
-color: white;
 
 &:hover{
   cursor: pointer;
@@ -76,8 +76,8 @@ color: white;
 }
 
 &:active{
+	opacity: 0.75;
   background-color: ${colors.secundario};
-  opacity: 0.75;
 }
 `;
 
@@ -86,7 +86,6 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 	const [ info, setInfo ] = useState({});
 
 	const handlerDelete = async (id) => { await axios.delete(`api/personal/delete/${id}`);};
-	console.log(dataRow);
 	useEffect(() => {
 		setInfo(dataRow);
 	}, [dataRow]);
@@ -132,7 +131,6 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 								<option value="Director">Director</option>
 								<option value="Profesor">Profesor</option>
 								<option value="Administrativo">Administrativo</option>
-								<option value="Miscelanio">Miscelanio</option>
 							</SField>
 							<SendButton type='submit'>Guardar</SendButton>
 							<Delete type="button" active={activeButton} onClick={() => {handlerDelete;}} />

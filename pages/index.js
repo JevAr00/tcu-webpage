@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import styles from 'styles/Home.module.css';
-import bgImage from 'public/img/img_escuelaP.jpg';
-import bgPersonal from 'public/img/pattern.png';
 import Card from 'components/Card';
 import { motion } from 'framer-motion';
+import styles from 'styles/Home.module.css';
+import bgPersonal from 'public/img/pattern.png';
+import bgImage from 'public/img/img_escuelaP.jpg';
 
 export default function Home() {
 
@@ -185,21 +185,9 @@ export default function Home() {
 					viewport={{ once:false, amount: 0.1 }}
 					transition={{ staggerChildren: 0.3 }}>
 
-					<motion.div variants={animation_cards}>
-						<Card/>
-					</motion.div>
-					<motion.div variants={animation_cards}>
-						<Card/>
-					</motion.div>
-					<motion.div variants={animation_cards}>
-						<Card/>
-					</motion.div>
-					<motion.div variants={animation_cards}>
-						<Card/>
-					</motion.div>
-					<motion.div variants={animation_cards}>
-						<Card/>
-					</motion.div>
+
+					<Card/>
+
 				</motion.div>
 
 			</motion.div>

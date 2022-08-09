@@ -1,7 +1,5 @@
-import axios from 'axios';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
 import defprof from 'public/img/defaultprofile.png';
 
 const CardBody = styled.div`

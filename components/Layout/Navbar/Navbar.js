@@ -49,13 +49,15 @@ const Header = styled.header`
 	}
 `;
 
-const Logo = styled.div`
+const Logo = styled.h1`
+	color: #ffffff;
 	transition: 0.6s;
 	font-size: 1.5rem;
+	user-select: none;
 	position: relative;
+	font-weight: normal;
 	text-decoration: none;
 	letter-spacing: 0.125rem;
-	color: ${colors.secundario};
 `;
 
 const SMenu = styled(Menu)`
@@ -107,7 +109,7 @@ const Navbar = () => {
 
 	return (
 		<Header id={color ? styles.stickyNav : ''}>
-			<Logo>Logo</Logo>
+			<Link href='/'passHref><Logo>Ramon Herrero Vitoria</Logo></Link>
 			<nav>
 				<SMenu/>
 				<ul>

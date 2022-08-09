@@ -41,33 +41,18 @@ const CardMail = styled.h3`
   font-size: 1.2rem;
 `;
 
-const Card = () => {
-
-	const [info, setInfo] = useState([]);
-
-	useEffect(() => {
-		(async () => {
-			const { data } = await axios.get('api/personal/getPersonal');
-			setInfo(data);
-		})();
-	}, []);
+const Card = ({ item }) => {
 
 	return (
-		<>
-			{
-				info.map((item) => (
 
-					<CardBody key={item.idP}>
-						<CardTitle>{item.tipo}</CardTitle>
-						<Image src={defprof} alt="profile picture" width="194" height="194"/>
-						<CardName>{item.nombre}</CardName>
-						<CardLastN>{item.apellido}</CardLastN>
-						<CardMail>{item.correo}</CardMail>
-		      </CardBody>
+		<CardBody>
+			<CardTitle>{item.tipo}</CardTitle>
+			<Image src={defprof} alt="profile picture" width="194" height="194"/>
+			<CardName>{item.nombre}</CardName>
+			<CardLastN>{item.apellido}</CardLastN>
+			<CardMail>{item.correo}</CardMail>
+		</CardBody>
 
-				))
-			}
-		</>
 	);
 };
 

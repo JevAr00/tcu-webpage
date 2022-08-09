@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Card from 'components/Card';
 import { motion } from 'framer-motion';
 import styles from 'styles/Home.module.css';
 import bgPersonal from 'public/img/pattern.png';
 import bgImage from 'public/img/img_escuelaP.jpg';
+import CardContainer from 'components/CardContainer';
 
 export default function Home() {
 
@@ -40,14 +40,6 @@ export default function Home() {
 		},
 	};
 
-	const animation_cards = {
-		Visible:{ y:50, opacity: 0 },
-		noVisible:{ y:0, opacity: 1,
-			transition:{ type: 'spring',
-				bounce:0.2,
-				duration: 1 },
-		},
-	};
 
 	return (
 		<div className={styles.contenido}>
@@ -178,18 +170,7 @@ export default function Home() {
 					<h2>Nuestro Personal</h2>
 				</motion.div>
 
-
-				<motion.div className={styles.card_container}
-					initial={'Visible'}
-					whileInView={'noVisible'}
-					viewport={{ once:false, amount: 0.1 }}
-					transition={{ staggerChildren: 0.3 }}>
-
-
-					<Card/>
-
-				</motion.div>
-
+				<CardContainer/>
 			</motion.div>
 
 		</div>

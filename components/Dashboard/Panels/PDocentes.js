@@ -20,14 +20,14 @@ const Area = styled.div`
 `;
 
 const Button = styled.button`
-	border: 0;
-	right: 10%;
-	bottom: 27%;
+	position: relative;
+	top: 70%;
+	right: 14%;
 	width: 8rem;
-	color: white;
 	height: 2.5rem;
-	font-size: 15px; 
-	position: absolute;
+	font-size: 15px;
+	color: white; 
+	border: 0;
 	border-radius: 6px;
 	background-color: ${colors.secundario};
 

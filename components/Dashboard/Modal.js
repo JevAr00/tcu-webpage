@@ -85,10 +85,18 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 	const { visible, setVisible } = useContext(ModalContext);
 	const [ info, setInfo ] = useState({});
 
-	const handlerDelete = async (id) => { await axios.delete(`api/personal/delete/${id}`);};
+	const handlerDelete = async () => {
+
+		 const id = (Object.values(info)[0]);
+		 await axios.delete(`api/personal/delete/${id}`);
+	};
+
+
 	useEffect(() => {
 		setInfo(dataRow);
+
 	}, [dataRow]);
+
 
 	return (
 		<Modal visible={visible}>
@@ -133,7 +141,7 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 								<option value="Administrativo">Administrativo</option>
 							</SField>
 							<SendButton type='submit'>Guardar</SendButton>
-							<Delete type="button" active={activeButton} onClick={() => {handlerDelete;}} />
+							<Delete type="button" active={activeButton} onClick = {handlerDelete} />
 						</SForm>
 					</Formik>
 				</MainDiv>

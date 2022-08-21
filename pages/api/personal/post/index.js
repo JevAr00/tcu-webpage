@@ -5,8 +5,8 @@ import personal from 'utils/db/models/personal';
 
 import mongoose from 'mongoose';
 
-// falta poner withApiAuthRequired
-export default (async function handler(req, res) {
+
+export default withApiAuthRequired(async function handler(req, res) {
 	const { nombre, apellido, correo, tipo } = req.body;
 	const newid = new mongoose.Types.ObjectId();
 	const user = new personal({

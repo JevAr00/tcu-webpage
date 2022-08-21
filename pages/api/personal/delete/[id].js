@@ -2,8 +2,8 @@ import Personal from 'utils/db/models/personal';
 import conectarDB from 'utils/db/dbConnect';
 import { withApiAuthRequired } from '@auth0/nextjs-auth0';
 
-// falta ponerle withApiAuthRequired
-export default async function handler(req, res) {
+
+export default withApiAuthRequired(async function handler(req, res) {
 	const { id } = req.query;
 
 	// DB Connect
@@ -14,8 +14,8 @@ export default async function handler(req, res) {
 
 	try {
 
-		const personal = await Personal.findByIdAndDelete(id);
-		res.status(200).json({ status:borrado });
+		await Personal.findByIdAndDelete(id);
+		res.status(204).json({});
 
 	}
 	catch (err) {
@@ -23,4 +23,4 @@ export default async function handler(req, res) {
 	}
 
 
-};
+});

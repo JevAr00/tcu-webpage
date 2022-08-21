@@ -8,7 +8,7 @@ export default async function handler1(req, res) {
 	// DB Connect
 	await conectarDB();
 
-	// Get and Post method
+	// Get method
 
 	if (method === 'GET') {
 		try {

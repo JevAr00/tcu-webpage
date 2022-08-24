@@ -1,15 +1,10 @@
 import Personal from 'utils/db/models/personal';
 import conectarDB from 'utils/db/dbConnect';
 
-
-export default async function handler1(req, res) {
-
+export default async function Get(req, res) {
 
 	// DB Connect
 	await conectarDB();
-
-	// Get method
-
 
 	try {
 		const personal = await Personal.find();
@@ -19,6 +14,4 @@ export default async function handler1(req, res) {
 	catch (err) {
 		res.status(500).json(err);
 	}
-
-
 }

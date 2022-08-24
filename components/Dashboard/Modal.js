@@ -1,11 +1,12 @@
-import axios from 'axios';
-import { colors } from 'public/theme';
 import styled from 'styled-components';
-import Close from 'components/Icons/Close';
 import { Form, Formik, Field } from 'formik';
-import Delete from 'components/Icons/Delete';
-import { ModalContext } from 'utils/helpers/context';
 import { useContext, useEffect, useState } from 'react';
+
+import { sendInfo, delInfo } from 'utils/helpers/calls';
+import Close from 'components/Icons/Close';
+import Delete from 'components/Icons/Delete';
+import { colors } from 'public/theme';
+import { ModalContext, DataContext } from 'utils/helpers/context';
 
 const TopDiv = styled.div`
 display: flex;
@@ -83,26 +84,27 @@ background-color: ${colors.secundario};
 
 const ModalComponent = ({ activeButton, dataRow }) => {
 	const { visible, setVisible } = useContext(ModalContext);
+	const { reload, setReload } = useContext(DataContext);
 	const [ info, setInfo ] = useState({});
 
 	const handlerDelete = async () => {
-
-		 const id = (Object.values(info)[0]);
-		 await axios.delete(`api/personal/delete/${id}`);
+		const id = (Object.values(info)[0]);
+		const res = await delInfo(id);
+		if (res.status == 204) { alert('Se ha elimando el registro'); }
 	};
-
 
 	useEffect(() => {
 		setInfo(dataRow);
-
 	}, [dataRow]);
-
 
 	return (
 		<Modal visible={visible}>
 			<ModalContent>
 				<TopDiv>
-					<Close onClick={() => { setVisible(!visible);} }/>
+					<Close onClick={() => {
+						setReload(true);
+						setVisible(!visible);
+					}}/>
 				</TopDiv>
 				<MainDiv>
 					<Formik
@@ -113,16 +115,9 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 							tipo: info ? info.tipo : '--elegir--',
 						}}
 						enableReinitialize={true}
-						onSubmit = { (values) => {
-
-							(async () => {
-
-								const res =	await axios.post ('api/personal/post', { nombre:values.nombre, apellido:values.apellido, correo:values.correo, tipo:values.tipo });
-
-								if (res.status == 201) {alert('agregado');}
-							})();
-
-
+						onSubmit = { async (values) => {
+							const res = await sendInfo(values);
+							if (res.status == 201) { alert('Se ha agregado un nuevo registro'); }
 						}}
 					>
 						<SForm>
@@ -141,7 +136,7 @@ const ModalComponent = ({ activeButton, dataRow }) => {
 								<option value="Administrativo">Administrativo</option>
 							</SField>
 							<SendButton type='submit'>Guardar</SendButton>
-							<Delete type="button" active={activeButton} onClick = {handlerDelete} />
+							<Delete type="button" active={activeButton} onClick={handlerDelete} />
 						</SForm>
 					</Formik>
 				</MainDiv>

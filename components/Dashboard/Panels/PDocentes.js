@@ -1,10 +1,10 @@
-import axios from 'axios';
+import { getInfo } from 'utils/helpers/calls';
 import Table from '../Table';
 import styled from 'styled-components';
 import ModalComponent from '../Modal';
 import { colors } from 'public/theme';
 import { useEffect, useState } from 'react';
-import { ModalContext } from 'utils/helpers/context';
+import { ModalContext, DataContext } from 'utils/helpers/context';
 
 const headers = ['Nombre', 'Apellido', 'Correo', 'Tipo'];
 
@@ -44,25 +44,29 @@ const Button = styled.button`
 
 const PDocentes = () => {
 	const [visible, setVisible] = useState(false);
+	const [reload, setReload] = useState(true);
 	const [info, setInfo] = useState([]);
 
 	useEffect(() => {
-		(async () => {
-			const { data } = await axios.get('api/personal/getPersonal');
-			setInfo(data);
-		})();
-	}, []);
+		if (reload) {
+			(async () => {
+				const data = await getInfo();
+				setInfo(data);
+			})();
+			setReload(false);
+		}
+	}, [reload]);
 
 	return (
-		<>
+		<DataContext.Provider value={{ reload, setReload }}>
 			<Area>
-				<Table data ={info} columns={headers}/>
+				<Table data={info} columns={headers}/>
 			</Area>
 			<Button onClick={() => { setVisible(!visible); }}>Nuevo</Button>
 			<ModalContext.Provider value={{ visible, setVisible }}>
 				<ModalComponent/>
 			</ModalContext.Provider>
-		</>
+		</DataContext.Provider>
 	);
 };
 
